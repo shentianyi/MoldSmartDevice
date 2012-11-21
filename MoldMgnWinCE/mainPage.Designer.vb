@@ -40,7 +40,7 @@ Partial Public Class mainPage
         '
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 16.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label2.Location = New System.Drawing.Point(81, 35)
+        Me.Label2.Location = New System.Drawing.Point(42, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(154, 30)
         Me.Label2.Text = "模具管理终端"
@@ -48,7 +48,7 @@ Partial Public Class mainPage
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(20, 95)
+        Me.Button1.Location = New System.Drawing.Point(20, 105)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(196, 42)
         Me.Button1.TabIndex = 2
@@ -57,7 +57,7 @@ Partial Public Class mainPage
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(20, 184)
+        Me.Button2.Location = New System.Drawing.Point(20, 191)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(196, 48)
         Me.Button2.TabIndex = 3
