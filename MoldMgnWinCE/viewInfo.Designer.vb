@@ -26,20 +26,20 @@ Partial Public Class viewInfo
         Me.TextBox_MoldId = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.Label_Project = New System.Windows.Forms.Label
-        Me.Labe_position = New System.Windows.Forms.Label
         Me.Label_status = New System.Windows.Forms.Label
+        Me.Labe_position = New System.Windows.Forms.Label
+        Me.Label_Project = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button_back
         '
         Me.Button_back.BackColor = System.Drawing.Color.White
-        Me.Button_back.Location = New System.Drawing.Point(18, 12)
+        Me.Button_back.Location = New System.Drawing.Point(18, 13)
         Me.Button_back.Name = "Button_back"
         Me.Button_back.Size = New System.Drawing.Size(72, 20)
         Me.Button_back.TabIndex = 17
@@ -49,21 +49,21 @@ Partial Public Class viewInfo
         '
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label3.Location = New System.Drawing.Point(152, 12)
+        Me.Label3.Location = New System.Drawing.Point(152, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(69, 20)
         Me.Label3.Text = "LEONI"
         '
         'TextBox_MoldId
         '
-        Me.TextBox_MoldId.Location = New System.Drawing.Point(18, 66)
+        Me.TextBox_MoldId.Location = New System.Drawing.Point(18, 69)
         Me.TextBox_MoldId.Name = "TextBox_MoldId"
         Me.TextBox_MoldId.Size = New System.Drawing.Size(203, 23)
         Me.TextBox_MoldId.TabIndex = 19
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(18, 43)
+        Me.Label1.Location = New System.Drawing.Point(18, 46)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 20)
         Me.Label1.Text = "请输入模具ID"
@@ -78,61 +78,58 @@ Partial Public Class viewInfo
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(18, 95)
+        Me.Panel1.Location = New System.Drawing.Point(18, 98)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(203, 197)
+        Me.Panel1.Size = New System.Drawing.Size(203, 191)
         '
-        'Label2
+        'Label_status
         '
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 20)
-        Me.Label2.Text = "详细信息"
+        Me.Label_status.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label_status.Location = New System.Drawing.Point(109, 52)
+        Me.Label_status.Name = "Label_status"
+        Me.Label_status.Size = New System.Drawing.Size(76, 20)
         '
-        'Label4
+        'Labe_position
         '
-        Me.Label4.Location = New System.Drawing.Point(3, 80)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 20)
-        Me.Label4.Text = "当前位置"
+        Me.Labe_position.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labe_position.Location = New System.Drawing.Point(3, 124)
+        Me.Labe_position.Name = "Labe_position"
+        Me.Labe_position.Size = New System.Drawing.Size(134, 20)
         '
-        'Label5
+        'Label_Project
         '
-        Me.Label5.Location = New System.Drawing.Point(3, 20)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 20)
-        Me.Label5.Text = "项目"
+        Me.Label_Project.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label_Project.Location = New System.Drawing.Point(3, 52)
+        Me.Label_Project.Name = "Label_Project"
+        Me.Label_Project.Size = New System.Drawing.Size(81, 20)
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(3, 141)
+        Me.Label6.Location = New System.Drawing.Point(109, 32)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 20)
         Me.Label6.Text = "状态"
         '
-        'Label_Project
+        'Label5
         '
-        Me.Label_Project.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Regular)
-        Me.Label_Project.Location = New System.Drawing.Point(3, 40)
-        Me.Label_Project.Name = "Label_Project"
-        Me.Label_Project.Size = New System.Drawing.Size(197, 20)
-        Me.Label_Project.Text = "GM"
+        Me.Label5.Location = New System.Drawing.Point(3, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(46, 20)
+        Me.Label5.Text = "项目"
         '
-        'Labe_position
+        'Label4
         '
-        Me.Labe_position.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Regular)
-        Me.Labe_position.Location = New System.Drawing.Point(3, 100)
-        Me.Labe_position.Name = "Labe_position"
-        Me.Labe_position.Size = New System.Drawing.Size(197, 20)
-        Me.Labe_position.Text = "Label8"
+        Me.Label4.Location = New System.Drawing.Point(3, 104)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(100, 20)
+        Me.Label4.Text = "当前位置"
         '
-        'Label_status
+        'Label2
         '
-        Me.Label_status.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Regular)
-        Me.Label_status.Location = New System.Drawing.Point(3, 161)
-        Me.Label_status.Name = "Label_status"
-        Me.Label_status.Size = New System.Drawing.Size(197, 20)
-        Me.Label_status.Text = "Label9"
+        Me.Label2.Location = New System.Drawing.Point(3, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 20)
+        Me.Label2.Text = "详细信息"
         '
         'viewInfo
         '
@@ -140,14 +137,13 @@ Partial Public Class viewInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(238, 295)
+        Me.ClientSize = New System.Drawing.Size(238, 300)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox_MoldId)
         Me.Controls.Add(Me.Button_back)
         Me.Controls.Add(Me.Label3)
         Me.ForeColor = System.Drawing.Color.Black
-        Me.Menu = Me.mainMenu1
         Me.Name = "viewInfo"
         Me.Text = "查看模具信息"
         Me.Panel1.ResumeLayout(False)

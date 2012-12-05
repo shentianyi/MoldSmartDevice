@@ -79,6 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CFClientBase.vb" />
+    <Compile Include="inputPsw.Designer.vb">
+      <DependentUpon>inputPsw.vb</DependentUpon>
+    </Compile>
+    <Compile Include="inputPsw.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="moveMold.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SettingForm.Designer.vb">
+      <DependentUpon>SettingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SmartDeviceApi.vb" />
     <Compile Include="SVCUtil.vb" />
     <Compile Include="viewInfo.Designer.vb">
@@ -106,13 +118,11 @@
     <Compile Include="viewInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Web References\MoldPartInfoSvc\Reference.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="inputPsw.resx">
+      <DependentUpon>inputPsw.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainPage.resx">
       <DependentUpon>mainPage.vb</DependentUpon>
     </EmbeddedResource>
@@ -120,10 +130,13 @@
       <DependentUpon>moveMold.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewInfo.resx">
       <DependentUpon>viewInfo.vb</DependentUpon>
@@ -133,55 +146,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:9090/ToolingWCF/MoldPartInfoService/">
-      <UrlBehavior>Static</UrlBehavior>
-      <RelPath>Web References\MoldPartInfoSvc\</RelPath>
-      <UpdateFromURL>http://localhost:9090/ToolingWCF/MoldPartInfoService/</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>
-      </CachedAppSettingsObjectName>
-      <CachedSettingsPropName>
-      </CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\MoldPartInfoSvc\item.xsd" />
-    <None Include="Web References\MoldPartInfoSvc\item0.xsd" />
-    <None Include="Web References\MoldPartInfoSvc\item1.xsd" />
-    <None Include="Web References\MoldPartInfoSvc\item2.xsd" />
-    <None Include="Web References\MoldPartInfoSvc\item3.xsd" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\MoldPartInfoSvc\item.disco" />
-    <None Include="Web References\MoldPartInfoSvc\MoldBaseInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\MoldDynamicInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\MoldPartInfoService.wsdl" />
-    <None Include="Web References\MoldPartInfoSvc\MoldReleaseInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\MoldWarnInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\Position.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Web References\MoldPartInfoSvc\StorageRecord.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BannerBanner.jpg" />
+    <None Include="setting.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
   <ProjectExtensions>

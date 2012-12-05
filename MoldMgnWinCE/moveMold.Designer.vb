@@ -31,20 +31,21 @@ Partial Public Class moveMold
         Me.Label4 = New System.Windows.Forms.Label
         Me.TextBox_operator = New System.Windows.Forms.TextBox
         Me.Button_back = New System.Windows.Forms.Button
+        Me.Button1 = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.Location = New System.Drawing.Point(21, 55)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 20)
+        Me.Label1.Size = New System.Drawing.Size(180, 20)
         Me.Label1.Text = "请扫描模具号"
         '
         'Label2
         '
         Me.Label2.Location = New System.Drawing.Point(21, 104)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 20)
+        Me.Label2.Size = New System.Drawing.Size(180, 20)
         Me.Label2.Text = "请扫描工作台编号"
         '
         'TextBox_moldId
@@ -93,7 +94,7 @@ Partial Public Class moveMold
         Me.Label4.Location = New System.Drawing.Point(21, 165)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(170, 20)
-        Me.Label4.Text = "当前操作人员(点击更换)"
+        Me.Label4.Text = "当前操作人"
         '
         'TextBox_operator
         '
@@ -111,6 +112,15 @@ Partial Public Class moveMold
         Me.Button_back.TabIndex = 15
         Me.Button_back.Text = "返回菜单"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(106, 162)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(72, 20)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "点击更换"
+        '
         'moveMold
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -118,6 +128,7 @@ Partial Public Class moveMold
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(238, 295)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button_back)
         Me.Controls.Add(Me.TextBox_operator)
         Me.Controls.Add(Me.Label4)
@@ -128,7 +139,6 @@ Partial Public Class moveMold
         Me.Controls.Add(Me.TextBox_moldId)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Menu = Me.mainMenu1
         Me.Name = "moveMold"
         Me.Text = "转移工作台"
         Me.ResumeLayout(False)
@@ -144,5 +154,6 @@ Partial Public Class moveMold
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox_operator As System.Windows.Forms.TextBox
     Friend WithEvents Button_back As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

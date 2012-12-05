@@ -22,8 +22,11 @@ Namespace My.Resources
     '''<summary>
     '''  强类型资源类，用于查找本地化字符串等。
     '''</summary>
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-    Friend Module Resources
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "2.0.0.0"),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
+    Public Module Resources
         
         Private resourceMan As Global.System.Resources.ResourceManager
         
@@ -33,7 +36,7 @@ Namespace My.Resources
         '''  返回此类使用的缓存 ResourceManager 实例。
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        Public ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("MoldMgnWinCE.Resources", GetType(Resources).Assembly)
@@ -48,7 +51,7 @@ Namespace My.Resources
         '''  重写当前线程的 CurrentUICulture 属性。
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend Property Culture() As Global.System.Globalization.CultureInfo
+        Public Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
@@ -57,10 +60,19 @@ Namespace My.Resources
             End Set
         End Property
         
-        Friend ReadOnly Property BannerBanner() As System.Drawing.Bitmap
+        Public ReadOnly Property BannerBanner() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("BannerBanner", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 http://192.168.0.114:9090/ToolingWCF/SmartDeviceApi/ 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property connStr() As String
+            Get
+                Return ResourceManager.GetString("connStr", resourceCulture)
             End Get
         End Property
     End Module
