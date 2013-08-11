@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ed3a64ad-9edb-48a5-aa65-5dcff4da83e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9090/ToolingWCF/StorageManageService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c0ab00c4-ea26-4685-9b1a-7e3dc575e54f" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/StorageManageService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="39f39dd1-493a-4d68-824b-d22a8e23d4c2" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/StorageManageService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c335a6f8-38ce-4a81-a375-52260762ac18" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/StorageManageService/mex" />
+    <MetadataFile FileName="ClassLibrary.ENUM.xsd" MetadataType="Schema" ID="d9baab61-21ca-4519-83da-d8e5d84087c6" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/StorageManageService/mex" />
+    <MetadataFile FileName="ToolingWCF.DataModel.xsd" MetadataType="Schema" ID="327854d1-f525-4793-aa1d-eee7e9513463" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/StorageManageService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

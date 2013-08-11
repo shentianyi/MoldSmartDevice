@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="48ed484a-dc8d-405d-8c24-c01245569e82" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="3ebd7ffe-d518-4793-beaa-37ab1cca1eb0" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="975adfbe-b78a-46c5-b5d8-64a47a5b25bd" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="5e8ff9f8-aeff-420b-a596-548b0f49377f" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+    <MetadataFile FileName="ClassLibrary.Data1.xsd" MetadataType="Schema" ID="f2af1064-e5b7-417b-a267-d0070885b18b" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+    <MetadataFile FileName="ClassLibrary.ENUM1.xsd" MetadataType="Schema" ID="d12fb044-9e90-4ec6-bf79-2f556a444f5d" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+    <MetadataFile FileName="ToolingWCF.DataModel1.xsd" MetadataType="Schema" ID="8c7e35a0-21cc-4914-b35e-04016f07bce3" SourceId="1" SourceUrl="http://localhost:9090/ToolingWCF/MoldPartInfoService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
