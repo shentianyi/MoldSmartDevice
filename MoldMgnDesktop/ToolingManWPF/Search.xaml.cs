@@ -67,7 +67,7 @@ namespace ToolingManWPF
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             MoldSearchCondition condition = new MoldSearchCondition();
-            condition.MoldNR = MoldNRTB.Text;
+            condition.MoldNR = MoldNRTB.Text+";"+PositionTB.Text;
             condition.MoldTypeId = MoldTypeCB.SelectedIndex < 1 ? string.Empty : MoldTypeCB.SelectedValue.ToString();
             condition.ProjectId = ProjectCB.SelectedIndex <1 ? string.Empty :ProjectCB.SelectedValue.ToString();
             condition.State = StateCB.SelectedIndex < 1 ? ToolingManWPF.MoldPartInfoServiceReference.MoldStateType.NULL : (ToolingManWPF.MoldPartInfoServiceReference.MoldStateType)(int.Parse(StateCB.SelectedValue.ToString()));
@@ -201,6 +201,11 @@ namespace ToolingManWPF
         private void MoldNRTB_GotFocus(object sender, RoutedEventArgs e)
         {
             MoldNRTB.Text = string.Empty;
+        }
+
+        private void PositionTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            PositionTB.Text = string.Empty;
         }
 
     }

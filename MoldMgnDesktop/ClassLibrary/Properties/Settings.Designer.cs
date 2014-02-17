@@ -27,7 +27,7 @@ namespace ClassLibrary.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=wangsong-pc;Initial Catalog=ToolingManDB;Persist Security Info=True;U" +
-            "ser ID=sa;Password=wangosng")]
+            "ser ID=sa;Password=wangsong")]
         public string ToolingManDBConnectionString {
             get {
                 return ((string)(this["ToolingManDBConnectionString"]));

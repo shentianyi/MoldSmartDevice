@@ -13,6 +13,7 @@ namespace ClassLibrary.Data
     public class MoldSearchCondition
     {
         private string moldNR;
+        private string positionNr;
         private string moldTypeId;
         private string projectId;
         private MoldStateType state = MoldStateType.NULL;
@@ -21,8 +22,16 @@ namespace ClassLibrary.Data
 
         public string MoldNR
         {
-            get { return moldNR; }
+            get {
+                
+                return this.moldNR.Split(';')[0];
+            }
             set { moldNR = value; }
+        }
+
+        public string PositionNr
+        {
+            get { return this.moldNR.Split(';')[1]; } 
         }
 
         public string MoldTypeId

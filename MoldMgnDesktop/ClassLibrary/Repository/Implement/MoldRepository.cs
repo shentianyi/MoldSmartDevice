@@ -127,14 +127,22 @@ namespace ClassLibrary.Repository.Implement
         /// <returns>模具列表</returns>
         public List<MoldView> GetByMutiConditions(MoldSearchCondition condition)
         {
-            List<MoldView> molds = !string.IsNullOrEmpty(condition.MoldNR) ?
-                 context.MoldView.Where(m => m.MoldNR.Equals(condition.MoldNR))
-                 .ToList() :
-                 context.MoldView
+            List<MoldView> molds=null;
+            if(!string.IsNullOrEmpty(condition.MoldNR)) {
+                molds=context.MoldView.Where(m => m.MoldNR.Equals(condition.MoldNR))
+                .ToList();
+            }
+            else if (!string.IsNullOrEmpty(condition.PositionNr))
+            {
+                molds = context.MoldView.Where(m => m.Destination.Equals(condition.PositionNr))
+                             .ToList();
+            }else
+            {
+                 molds=context.MoldView
                  .Where(m => (string.IsNullOrEmpty(condition.MoldTypeId) ? true : m.MoldTypeID.Equals(condition.MoldTypeId))
                       && (string.IsNullOrEmpty(condition.ProjectId) ? true : m.ProjectID.Equals(condition.ProjectId))
                      && (condition.State == MoldStateType.NULL ? true : m.State == condition.State))
-                    .ToList();
+                    .ToList();}
             molds = molds.Distinct().ToList();
 
             return molds;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 20.125" name="ToolMan">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 23.375" name="ToolMan">
   <DataContextMoniker Name="/ToolManDataContext" />
   <nestedChildShapes>
     <classShape Id="8326a91e-5c01-4d66-a2b4-3e662cc0e0ad" absoluteBounds="11.75, 0.75, 2, 1.9535852050781253">
@@ -149,10 +149,10 @@
         <elementListCompartment Id="b2ba39f1-46a9-45ab-8fe6-822f9dff039d" absoluteBounds="5.39, 14.835, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="03f7b6c0-ea1c-4ccd-963a-a19437deb160" absoluteBounds="1.75, 14.875, 2, 5.0099003092447907">
+    <classShape Id="e494b54f-10b1-4425-b59b-884671cf955a" absoluteBounds="5.25, 17.875, 2, 5.2009200032552076">
       <DataClassMoniker Name="/ToolManDataContext/MoldView" />
       <nestedChildShapes>
-        <elementListCompartment Id="507e548e-4c9b-45f0-a093-c0075f794ae7" absoluteBounds="1.7650000000000001, 15.335, 1.9700000000000002, 4.4499003092447911" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bc38f21c-d702-42b8-8d0f-49a8dbb16d67" absoluteBounds="5.265, 18.335, 1.9700000000000002, 4.640920003255208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

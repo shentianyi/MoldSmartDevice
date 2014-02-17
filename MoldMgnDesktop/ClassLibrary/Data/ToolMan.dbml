@@ -172,6 +172,7 @@
       <Column Name="Producer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="Material" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Destination" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

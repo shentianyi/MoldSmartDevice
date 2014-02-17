@@ -21,7 +21,7 @@ namespace ClassLibrary.Data
 	using System.Runtime.Serialization;
 	using System.ComponentModel;
 	using System;
-    using ClassLibrary.ENUM;
+    using ENUM;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ToolingManDB")]
@@ -224,9 +224,6 @@ namespace ClassLibrary.Data
 		}
 	}
 	
-    /// <summary>
-    /// 附件
-    /// </summary>
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Attachment")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Attachment : INotifyPropertyChanging, INotifyPropertyChanged
@@ -269,9 +266,6 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 		
-        /// <summary>
-        /// 附件号
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public int AttachmentId
@@ -293,9 +287,6 @@ namespace ClassLibrary.Data
 			}
 		}
 		
-        /// <summary>
-        /// 附主号
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MasterNR", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string MasterNR
@@ -317,9 +308,6 @@ namespace ClassLibrary.Data
 			}
 		}
 		
-        /// <summary>
-        /// 类型
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public AttachmentType Type
@@ -340,10 +328,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-
-		/// <summary>
-		/// 生成时间
-		/// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public System.DateTime Date
@@ -365,9 +350,6 @@ namespace ClassLibrary.Data
 			}
 		}
 		
-        /// <summary>
-        /// 路径
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Path", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public string Path
@@ -389,9 +371,6 @@ namespace ClassLibrary.Data
 			}
 		}
 		
-        /// <summary>
-        /// 名称
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
 		public string Name
@@ -446,9 +425,6 @@ namespace ClassLibrary.Data
 		}
 	}
 	
-    /// <summary>
-    /// 工作台
-    /// </summary>
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Workstation")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Workstation : INotifyPropertyChanging, INotifyPropertyChanged
@@ -487,9 +463,6 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 		
-        /// <summary>
-        /// 工作台号
-        /// </summary>
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkstationID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string WorkstationID
@@ -510,10 +483,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-
-        /// <summary>
-        /// 类型
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkstationType", DbType="Int NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public WorkstationType WorkstationType
@@ -534,10 +504,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string Name
@@ -558,10 +525,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-
-        /// <summary>
-        /// 模具使用上限
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxMoldCount", DbType="Int NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public int MaxMoldCount
@@ -582,10 +546,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-
-        /// <summary>
-        /// 当前使用模具数量
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentMoldCount", DbType="Int NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public int CurrentMoldCount
@@ -639,9 +600,7 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 	}
-    /// <summary>
-    /// 员工
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Employee")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Employee : INotifyPropertyChanging, INotifyPropertyChanged
@@ -671,9 +630,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 员工号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string EmployeeID
@@ -694,9 +651,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 姓名
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string Name
@@ -717,9 +672,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 报告列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Report", Storage="_Report", ThisKey="EmployeeID", OtherKey="OperatorID")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3, EmitDefaultValue=false)]
 		public EntitySet<Report> Report
@@ -798,9 +751,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 模具
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mold")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Mold : INotifyPropertyChanging, INotifyPropertyChanged
@@ -894,9 +845,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 模具号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldNR", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string MoldNR
@@ -917,9 +866,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具型号号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldTypeID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string MoldTypeID
@@ -944,9 +891,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 成本中心号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string ProjectID
@@ -971,9 +916,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public string Name
@@ -994,9 +937,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 状态
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Int NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public MoldStateType State
@@ -1017,9 +958,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 压接次数
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cuttedtimes", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
 		public System.Nullable<int> Cuttedtimes
@@ -1040,9 +979,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 最大压接次数
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxCuttimes", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
 		public System.Nullable<int> MaxCuttimes
@@ -1063,9 +1000,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 当前压接次数
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentCuttimes", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
 		public System.Nullable<int> CurrentCuttimes
@@ -1086,9 +1021,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 最大借用时间
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxLendHour", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
 		public System.Nullable<int> MaxLendHour
@@ -1109,9 +1042,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 放行周期
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReleaseCycle", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
 		public System.Nullable<int> ReleaseCycle
@@ -1132,9 +1063,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 最近放行时间
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastReleasedDate", DbType="DateTime")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
 		public System.Nullable<System.DateTime> LastReleasedDate
@@ -1155,9 +1084,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 维护周期
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaintainCycle", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12)]
 		public System.Nullable<int> MaintainCycle
@@ -1178,9 +1105,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 最近维护时间
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastMainedDate", DbType="DateTime")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13)]
 		public System.Nullable<System.DateTime> LastMainedDate
@@ -1201,9 +1126,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 制造商
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Producer", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14)]
 		public string Producer
@@ -1224,9 +1147,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 重量
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(18,0)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15)]
 		public System.Nullable<decimal> Weight
@@ -1247,9 +1168,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 材质
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Material", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=16)]
 		public string Material
@@ -1270,9 +1189,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 最近记录
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_MoldLastRecord", Storage="_MoldLastRecord", ThisKey="MoldNR", OtherKey="MoldNR")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=17, EmitDefaultValue=false)]
 		public EntitySet<MoldLastRecord> MoldLastRecord
@@ -1291,9 +1208,7 @@ namespace ClassLibrary.Data
 				this._MoldLastRecord.Assign(value);
 			}
 		}
-        /// <summary>
-        /// 报告列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_Report", Storage="_Report", ThisKey="MoldNR", OtherKey="MoldID")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=18, EmitDefaultValue=false)]
 		public EntitySet<Report> Report
@@ -1312,9 +1227,7 @@ namespace ClassLibrary.Data
 				this._Report.Assign(value);
 			}
 		}
-        /// <summary>
-        /// 唯一件库存
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_UniqStorage", Storage="_UniqStorage", ThisKey="MoldNR", OtherKey="UniqNR")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=19, EmitDefaultValue=false)]
 		public EntitySet<UniqStorage> UniqStorage
@@ -1333,9 +1246,7 @@ namespace ClassLibrary.Data
 				this._UniqStorage.Assign(value);
 			}
 		}
-        /// <summary>
-        /// 型号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MoldType_Mold", Storage="_MoldType", ThisKey="MoldTypeID", OtherKey="MoldTypeID", IsForeignKey=true)]
 		public MoldType MoldType
 		{
@@ -1369,9 +1280,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 成本中心
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Mold", Storage="_Project", ThisKey="ProjectID", OtherKey="ProjectID", IsForeignKey=true)]
 		public Project Project
 		{
@@ -1493,9 +1402,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 模具类别
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoldCategory")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class MoldCategory : INotifyPropertyChanging, INotifyPropertyChanged
@@ -1525,9 +1432,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 类别号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldCateID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string MoldCateID
@@ -1548,9 +1453,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string Name
@@ -1571,9 +1474,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 型号列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MoldCategory_MoldType", Storage="_MoldType", ThisKey="MoldCateID", OtherKey="MoldCateID")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3, EmitDefaultValue=false)]
 		public EntitySet<MoldType> MoldType
@@ -1652,9 +1553,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 模具最近记录
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoldLastRecord")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class MoldLastRecord : INotifyPropertyChanging, INotifyPropertyChanged
@@ -1686,9 +1585,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 记录号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public int Id
@@ -1709,9 +1606,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldNR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string MoldNR
@@ -1736,9 +1631,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 存储记录号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StorageRecordNR", DbType="UniqueIdentifier NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public System.Guid StorageRecordNR
@@ -1759,9 +1652,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_MoldLastRecord", Storage="_Mold", ThisKey="MoldNR", OtherKey="MoldNR", IsForeignKey=true)]
 		public Mold Mold
 		{
@@ -1829,9 +1720,7 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 	}
-    /// <summary>
-    /// 模具型号
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MoldType")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class MoldType : INotifyPropertyChanging, INotifyPropertyChanged
@@ -1867,9 +1756,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 型号号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldTypeID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string MoldTypeID
@@ -1890,9 +1777,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 类别号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldCateID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string MoldCateID
@@ -1917,9 +1802,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string Name
@@ -1940,9 +1823,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MoldType_Mold", Storage="_Mold", ThisKey="MoldTypeID", OtherKey="MoldTypeID")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4, EmitDefaultValue=false)]
 		public EntitySet<Mold> Mold
@@ -1961,9 +1842,7 @@ namespace ClassLibrary.Data
 				this._Mold.Assign(value);
 			}
 		}
-        /// <summary>
-        /// 类别
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MoldCategory_MoldType", Storage="_MoldCategory", ThisKey="MoldCateID", OtherKey="MoldCateID", IsForeignKey=true)]
 		public MoldCategory MoldCategory
 		{
@@ -2058,9 +1937,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 库位
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Position")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Position : INotifyPropertyChanging, INotifyPropertyChanged
@@ -2100,9 +1977,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 库位号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public System.Guid PositionID
@@ -2123,9 +1998,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 仓库号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WarehouseNR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string WarehouseNR
@@ -2150,9 +2023,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 库位号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionNR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string PositionNR
@@ -2173,9 +2044,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 容量
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capicity", DbType="Int NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public int Capicity
@@ -2196,9 +2065,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 唯一件库存
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Position_UniqStorage", Storage="_UniqStorage", ThisKey="PositionID", OtherKey="PositionId")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5, EmitDefaultValue=false)]
 		public EntitySet<UniqStorage> UniqStorage
@@ -2217,9 +2084,7 @@ namespace ClassLibrary.Data
 				this._UniqStorage.Assign(value);
 			}
 		}
-        /// <summary>
-        /// 仓库
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Warehouse_Position", Storage="_Warehouse", ThisKey="WarehouseNR", OtherKey="WarehouseNR", IsForeignKey=true)]
 		public Warehouse Warehouse
 		{
@@ -2314,9 +2179,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 成本中心
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Project")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Project : INotifyPropertyChanging, INotifyPropertyChanged
@@ -2346,9 +2209,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 成本中心号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string ProjectID
@@ -2369,9 +2230,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string Name
@@ -2392,9 +2251,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Mold", Storage="_Mold", ThisKey="ProjectID", OtherKey="ProjectID")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3, EmitDefaultValue=false)]
 		public EntitySet<Mold> Mold
@@ -2473,9 +2330,7 @@ namespace ClassLibrary.Data
 			this.serializing = false;
 		}
 	}
-    /// <summary>
-    /// 报告
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Report")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Report : INotifyPropertyChanging, INotifyPropertyChanged
@@ -2517,9 +2372,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 报告号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportId", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public System.Guid ReportId
@@ -2540,9 +2393,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoldID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string MoldID
@@ -2567,9 +2418,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 操作员号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OperatorID", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string OperatorID
@@ -2594,9 +2443,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 生成时间
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public System.DateTime Date
@@ -2617,9 +2464,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 类型
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportType", DbType="Int NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public ReportType ReportType
@@ -2640,9 +2485,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 员工
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Report", Storage="_Employee", ThisKey="OperatorID", OtherKey="EmployeeID", IsForeignKey=true)]
 		public Employee Employee
 		{
@@ -2676,9 +2519,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_Report", Storage="_Mold", ThisKey="MoldID", OtherKey="MoldNR", IsForeignKey=true)]
 		public Mold Mold
 		{
@@ -2747,9 +2588,7 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 	}
-    /// <summary>
-    /// 存储记录
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StorageRecord")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class StorageRecord : INotifyPropertyChanging, INotifyPropertyChanged
@@ -2815,9 +2654,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 存储记录主键号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StorageRecordId", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public int StorageRecordId
@@ -2838,9 +2675,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 存储记录号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StorageRecordNR", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public System.Guid StorageRecordNR
@@ -2861,9 +2696,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 库位号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionId", DbType="UniqueIdentifier")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public System.Nullable<System.Guid> PositionId
@@ -2884,9 +2717,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 源
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Source", DbType="VarChar(100)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public string Source
@@ -2907,9 +2738,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 目标
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Destination", DbType="VarChar(100)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public string Destination
@@ -2930,9 +2759,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 操作员号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OperatorId", DbType="VarChar(100)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
 		public string OperatorId
@@ -2953,9 +2780,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 申请员号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicantId", DbType="VarChar(100)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
 		public string ApplicantId
@@ -2976,9 +2801,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 生成时间
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
 		public System.Nullable<System.DateTime> Date
@@ -2999,9 +2822,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 数量
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
 		public System.Nullable<int> Quantity
@@ -3022,9 +2843,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 类型
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordType", DbType="Int", CanBeNull=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
 		public StorageRecordType RecordType
@@ -3045,9 +2864,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 记录目标号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TargetNR", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
 		public string TargetNR
@@ -3068,9 +2885,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 备注
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="VarChar(500)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12)]
 		public string Remark
@@ -3124,9 +2939,7 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 	}
-    /// <summary>
-    /// 唯一件存储
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UniqStorage")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class UniqStorage : INotifyPropertyChanging, INotifyPropertyChanged
@@ -3168,9 +2981,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 唯一件存储号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniqStorageId", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public System.Guid UniqStorageId
@@ -3191,9 +3002,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 唯一件号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniqNR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string UniqNR
@@ -3218,9 +3027,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 库位号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionId", DbType="UniqueIdentifier NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public System.Guid PositionId
@@ -3245,9 +3052,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 包装号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackageNR", DbType="VarChar(100)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public string PackageNR
@@ -3268,9 +3073,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 数量
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public int Quantity
@@ -3291,9 +3094,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 模具
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mold_UniqStorage", Storage="_Mold", ThisKey="UniqNR", OtherKey="MoldNR", IsForeignKey=true)]
 		public Mold Mold
 		{
@@ -3327,9 +3128,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 库位
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Position_UniqStorage", Storage="_Position", ThisKey="PositionId", OtherKey="PositionID", IsForeignKey=true)]
 		public Position Position
 		{
@@ -3398,9 +3197,7 @@ namespace ClassLibrary.Data
 			this.Initialize();
 		}
 	}
-    /// <summary>
-    /// 仓库
-    /// </summary>
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Warehouse")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Warehouse : INotifyPropertyChanging, INotifyPropertyChanged
@@ -3434,9 +3231,7 @@ namespace ClassLibrary.Data
 		{
 			this.Initialize();
 		}
-        /// <summary>
-        /// 仓库号
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WarehouseNR", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public string WarehouseNR
@@ -3457,9 +3252,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 名称
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string Name
@@ -3480,9 +3273,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 类型
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WarehouseType", DbType="Int NOT NULL", CanBeNull=false)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public WarehouseType WarehouseType
@@ -3503,9 +3294,7 @@ namespace ClassLibrary.Data
 				}
 			}
 		}
-        /// <summary>
-        /// 库位列表
-        /// </summary>
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Warehouse_Position", Storage="_Position", ThisKey="WarehouseNR", OtherKey="WarehouseNR")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4, EmitDefaultValue=false)]
 		public EntitySet<Position> Position
@@ -3757,6 +3546,8 @@ namespace ClassLibrary.Data
 		private System.Nullable<decimal> _Weight;
 		
 		private string _Material;
+		
+		private string _Destination;
 		
 		public MoldView()
 		{
@@ -4132,6 +3923,23 @@ namespace ClassLibrary.Data
 				if ((this._Material != value))
 				{
 					this._Material = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Destination", DbType="VarChar(100)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+		public string Destination
+		{
+			get
+			{
+				return this._Destination;
+			}
+			set
+			{
+				if ((this._Destination != value))
+				{
+					this._Destination = value;
 				}
 			}
 		}

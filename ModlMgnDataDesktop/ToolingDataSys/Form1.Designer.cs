@@ -38,8 +38,10 @@
             this.dataManTab = new System.Windows.Forms.TabControl();
             this.addData = new System.Windows.Forms.TabPage();
             this.deleteData = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataManTab.SuspendLayout();
             this.addData.SuspendLayout();
+            this.deleteData.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImPosiBtn
@@ -142,6 +144,7 @@
             // 
             // deleteData
             // 
+            this.deleteData.Controls.Add(this.label1);
             this.deleteData.Location = new System.Drawing.Point(4, 22);
             this.deleteData.Name = "deleteData";
             this.deleteData.Padding = new System.Windows.Forms.Padding(3);
@@ -149,6 +152,16 @@
             this.deleteData.TabIndex = 1;
             this.deleteData.Text = "删除数据";
             this.deleteData.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(181, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "not support!";
             // 
             // MainForm
             // 
@@ -161,6 +174,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.dataManTab.ResumeLayout(false);
             this.addData.ResumeLayout(false);
+            this.deleteData.ResumeLayout(false);
+            this.deleteData.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -177,6 +192,7 @@
         private System.Windows.Forms.TabControl dataManTab;
         private System.Windows.Forms.TabPage addData;
         private System.Windows.Forms.TabPage deleteData;
+        private System.Windows.Forms.Label label1;
     }
 }
 
