@@ -63,5 +63,30 @@ namespace ToolingDataSys
         {
             Application.Exit();
         }
+
+        private void UpdatePosiBtn_Click(object sender, EventArgs e)
+        {
+            LoadFileForm file = new LoadFileForm(new PositionFile(), FileDataOperateType.Update);
+            file.ShowDialog();
+        }
+
+        private void UpdateMoldBtn_Click(object sender, EventArgs e)
+        {
+            LoadFileForm file = new LoadFileForm(new MoldFile(), FileDataOperateType.Update);
+            file.ShowDialog();
+        }
+
+        private void DeletePosiBtn_Click(object sender, EventArgs e)
+        {
+            LoadFileForm file = new LoadFileForm(new PositionFile(), FileDataOperateType.Delete);
+            file.ShowDialog();
+        }
+
+        private void DeleteMoldBtn_Click(object sender, EventArgs e)
+        {
+            LoadFileForm file = new LoadFileForm(new MoldFile(), FileDataOperateType.Delete);
+            file.ShowDialog();
+        } 
+         
     }
 }

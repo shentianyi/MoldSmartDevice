@@ -13,10 +13,12 @@ namespace ToolingDataSys
     public partial class LoadFileForm : Form
     {
         IFileData file = null;
-        public LoadFileForm(IFileData file)
+        FileDataOperateType type = FileDataOperateType.Insert;
+        public LoadFileForm(IFileData file, FileDataOperateType type = FileDataOperateType.Insert)
         {
             InitializeComponent();
             this.file = file;
+            this.type = type;
         }
 
         private void PickFileBtn_Click(object sender, EventArgs e)
@@ -31,17 +33,30 @@ namespace ToolingDataSys
         {
             if (FilePathTB.Text.Length > 0)
             {
-              ImExcel excel = new ImExcel();
-              DataTable dt=  excel.LoadExcel(FilePathTB.Text);
-                List<ToolingDataSys.Code.Message> message=file.Insert(dt);
-             
-                    if (message.Count > 0)
-                    {
-                        new MessageDialog(message).ShowDialog();
-                    }
-                    else {
-                        MessageBox.Show("导入成功！");
-                    }
+                ImExcel excel = new ImExcel();
+                DataTable dt = excel.LoadExcel(FilePathTB.Text);
+                List<ToolingDataSys.Code.Message> message = null;
+                if (type == FileDataOperateType.Insert)
+                {
+                    message = file.Insert(dt);
+                }
+                else if (type == FileDataOperateType.Update)
+                {
+                    message = file.Update(dt);
+                }
+                else if (type == FileDataOperateType.Delete)
+                {
+                    message = file.Delete(dt);
+                }
+
+                if (message!=null && message.Count > 0)
+                {
+                    new MessageDialog(message).ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("导入成功！");
+                }
             }
         }
     }

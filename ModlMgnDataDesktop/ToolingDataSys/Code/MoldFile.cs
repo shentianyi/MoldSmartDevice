@@ -28,11 +28,11 @@ namespace ToolingDataSys.Code
                             CheckMessage="库位不存在"},
                               new ForeignKeyChecker(){
                             CheckQuery="select * from  Project where ProjectID=@pro",
-                            CheckValueIndex=0,
+                            CheckValueIndex=3,
                             CheckMessage="成本中心不存在"},
                                  new ForeignKeyChecker(){
                             CheckQuery="select * from MoldType where MoldTypeID=@type",
-                            CheckValueIndex=0,
+                            CheckValueIndex=2,
                             CheckMessage="模具型号不存在"}
                     };
                     string uniqQuery = "select * from Mold where MoldNR=@nr";
@@ -44,6 +44,9 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
   insert into StorageRecord(StorageRecordNR,PositionId,Destination,Date,Quantity,RecordType,TargetNR,OperatorId)
   values(@guid,(select PositionID from Position where PositionNR=@posi),@posi,@date,1,3,@nr,'DATA-ADMIN');
   insert into MoldLastRecord(MoldNR,StorageRecordNR) values(@nr,@guid);";
+
+                    //                    string updateQuery = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
+                    //Producer=@producer,Weight=@weight,Material=@material";
 
                     SqlCommand com = new SqlCommand(q, conn, tran);
                     SqlParameter nr = new SqlParameter("@nr", SqlDbType.VarChar);
@@ -80,7 +83,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                             {
                                 posi.Value = row[0];
                                 nr.Value = row[1];
-                                type.Value = row[4];
+                                type.Value = row[2];
                                 pro.Value = row[3];
                                 name.Value = row[4];
                                 max.Value = int.Parse(row[5].ToString().Trim());
@@ -129,7 +132,6 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                     }
                     tran.Commit();
                     conn.Close();
-
                 }
                 catch (Exception e)
                 {
@@ -143,6 +145,48 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                     conn.Close();
                 } return message;
             }
+        }
+
+
+
+        public List<Message> Update(DataTable dt)
+        {
+            string uniqString = "select * from Mold where MoldNr=@nr";
+
+            string updateString = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
+            Producer=@producer,Weight=@weight,Material=@material where MoldNr=@nr";
+
+            return SQLHelper.Update(uniqString, updateString, dt, GetParams(), 0);
+        }
+
+        private SqlParameter[] GetParams()
+        {
+            return new SqlParameter[] { 
+               new SqlParameter("@nr", SqlDbType.VarChar),
+               new SqlParameter("@type", SqlDbType.VarChar),
+               new SqlParameter("@pro", SqlDbType.VarChar),
+               new SqlParameter("@name", SqlDbType.VarChar),
+               new SqlParameter("@max", SqlDbType.Int),
+               new SqlParameter("@release", SqlDbType.Int),
+               new SqlParameter("@main", SqlDbType.Int),
+               new SqlParameter("@producer", SqlDbType.VarChar),
+               new SqlParameter("@weight", SqlDbType.Float),
+               new SqlParameter("@material", SqlDbType.VarChar)
+            };
+        }
+
+
+        public List<Message> Delete(DataTable dt)
+        {
+            string uniqString = "select * from Mold where MoldNr=@nr";
+            string deleteString = @"delete from UniqStorage where UniqNR=@nr;
+                   delete from MoldLastRecord where MoldNr=@nr;
+                   delete from Report where MoldID=@nr;
+                   delete from Mold where MoldNr=@nr";
+            return SQLHelper.Delete(uniqString, deleteString, dt,
+                new SqlParameter[] { 
+                     new SqlParameter("@nr", SqlDbType.VarChar)
+            }, 0);
         }
     }
 }

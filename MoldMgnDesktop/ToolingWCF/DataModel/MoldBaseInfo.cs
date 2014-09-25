@@ -28,6 +28,8 @@ namespace ToolingWCF.DataModel
         [DataMember]
         public MoldStateType State { get; set; }
         [DataMember]
+        public int MaxLendHour { get; set; }
+        [DataMember]
         public string StateCN { get; set; }
         [DataMember]
         public string ProjectId { get; set; }

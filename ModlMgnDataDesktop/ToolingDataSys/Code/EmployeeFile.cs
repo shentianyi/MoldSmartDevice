@@ -21,7 +21,19 @@ namespace ToolingDataSys.Code
             };
            return SQLHelper.Insert(uniqString, insertString, dt, parameters, 0);
        }
-        
+
+
+
+       public List<Message> Update(DataTable dt)
+       {
+           throw new NotImplementedException();
+       }
+
+
+       public List<Message> Delete(DataTable dt)
+       {
+           throw new NotImplementedException();
+       }
     }
 }
 

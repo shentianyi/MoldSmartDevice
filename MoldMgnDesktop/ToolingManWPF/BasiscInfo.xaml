@@ -81,7 +81,15 @@
                             </Label.Effect>
                         </Label>
                     </StackPanel>
-
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <Label Content="最长借出：" Margin="0,0,10,0" FontSize="13.333"></Label>
+                        <Label MinWidth="300" Content="{Binding Path=MaxLendHour}" FontSize="13.333" BorderThickness="1" BorderBrush="#FFC6C6C6" HorizontalAlignment="Right">
+                            <Label.Effect>
+                                <DropShadowEffect BlurRadius="2" Color="#FFBABABA" Opacity="0.26" ShadowDepth="2"/>
+                            </Label.Effect>
+                        </Label>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10">
                         <Label Content="模具库位：" Margin="0,0,10,0" FontSize="13.333"></Label>
                         <Label MinWidth="240" Content="{Binding Path=Position}" FontSize="13.333" BorderThickness="1" Name="MoldPosiContent"

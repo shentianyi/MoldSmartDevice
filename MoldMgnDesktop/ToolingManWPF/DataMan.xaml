@@ -34,10 +34,6 @@
         </Grid>
         <Grid Grid.Row="1">
             <TabControl>
-                <TabItem  Header="添加数据"  FontSize="13"  Width="120" Height="30" Foreground="#FF0090C2">
-            
-                </TabItem>
-
                 <TabItem  Header="删除数据"  FontSize="13"  Width="120" Height="30"    Foreground="#FF0090C2">
              
                 </TabItem>

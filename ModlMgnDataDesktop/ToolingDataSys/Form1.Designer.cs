@@ -37,10 +37,15 @@
             this.ImpMold = new System.Windows.Forms.Button();
             this.dataManTab = new System.Windows.Forms.TabControl();
             this.addData = new System.Windows.Forms.TabPage();
+            this.updateData = new System.Windows.Forms.TabPage();
+            this.UpdatePosiBtn = new System.Windows.Forms.Button();
+            this.UpdateMoldBtn = new System.Windows.Forms.Button();
             this.deleteData = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DeleteMoldBtn = new System.Windows.Forms.Button();
+            this.DeletePosiBtn = new System.Windows.Forms.Button();
             this.dataManTab.SuspendLayout();
             this.addData.SuspendLayout();
+            this.updateData.SuspendLayout();
             this.deleteData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +122,7 @@
             // dataManTab
             // 
             this.dataManTab.Controls.Add(this.addData);
+            this.dataManTab.Controls.Add(this.updateData);
             this.dataManTab.Controls.Add(this.deleteData);
             this.dataManTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataManTab.Location = new System.Drawing.Point(0, 0);
@@ -142,26 +148,69 @@
             this.addData.Text = "导入数据";
             this.addData.UseVisualStyleBackColor = true;
             // 
+            // updateData
+            // 
+            this.updateData.Controls.Add(this.UpdatePosiBtn);
+            this.updateData.Controls.Add(this.UpdateMoldBtn);
+            this.updateData.Location = new System.Drawing.Point(4, 22);
+            this.updateData.Name = "updateData";
+            this.updateData.Padding = new System.Windows.Forms.Padding(3);
+            this.updateData.Size = new System.Drawing.Size(599, 355);
+            this.updateData.TabIndex = 1;
+            this.updateData.Text = "更新数据";
+            this.updateData.UseVisualStyleBackColor = true;
+            // 
+            // UpdatePosiBtn
+            // 
+            this.UpdatePosiBtn.Location = new System.Drawing.Point(65, 36);
+            this.UpdatePosiBtn.Name = "UpdatePosiBtn";
+            this.UpdatePosiBtn.Size = new System.Drawing.Size(113, 48);
+            this.UpdatePosiBtn.TabIndex = 7;
+            this.UpdatePosiBtn.Text = "更新库位";
+            this.UpdatePosiBtn.UseVisualStyleBackColor = true;
+            this.UpdatePosiBtn.Click += new System.EventHandler(this.UpdatePosiBtn_Click);
+            // 
+            // UpdateMoldBtn
+            // 
+            this.UpdateMoldBtn.Location = new System.Drawing.Point(217, 36);
+            this.UpdateMoldBtn.Name = "UpdateMoldBtn";
+            this.UpdateMoldBtn.Size = new System.Drawing.Size(113, 48);
+            this.UpdateMoldBtn.TabIndex = 11;
+            this.UpdateMoldBtn.Text = "更新模具";
+            this.UpdateMoldBtn.UseVisualStyleBackColor = true;
+            this.UpdateMoldBtn.Click += new System.EventHandler(this.UpdateMoldBtn_Click);
+            // 
             // deleteData
             // 
-            this.deleteData.Controls.Add(this.label1);
+            this.deleteData.Controls.Add(this.DeleteMoldBtn);
+            this.deleteData.Controls.Add(this.DeletePosiBtn);
             this.deleteData.Location = new System.Drawing.Point(4, 22);
             this.deleteData.Name = "deleteData";
             this.deleteData.Padding = new System.Windows.Forms.Padding(3);
             this.deleteData.Size = new System.Drawing.Size(599, 355);
-            this.deleteData.TabIndex = 1;
+            this.deleteData.TabIndex = 2;
             this.deleteData.Text = "删除数据";
             this.deleteData.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // DeleteMoldBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(181, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "not support!";
+            this.DeleteMoldBtn.Location = new System.Drawing.Point(210, 38);
+            this.DeleteMoldBtn.Name = "DeleteMoldBtn";
+            this.DeleteMoldBtn.Size = new System.Drawing.Size(113, 48);
+            this.DeleteMoldBtn.TabIndex = 9;
+            this.DeleteMoldBtn.Text = "删除模具";
+            this.DeleteMoldBtn.UseVisualStyleBackColor = true;
+            this.DeleteMoldBtn.Click += new System.EventHandler(this.DeleteMoldBtn_Click);
+            // 
+            // DeletePosiBtn
+            // 
+            this.DeletePosiBtn.Location = new System.Drawing.Point(62, 38);
+            this.DeletePosiBtn.Name = "DeletePosiBtn";
+            this.DeletePosiBtn.Size = new System.Drawing.Size(113, 48);
+            this.DeletePosiBtn.TabIndex = 8;
+            this.DeletePosiBtn.Text = "删除库位";
+            this.DeletePosiBtn.UseVisualStyleBackColor = true;
+            this.DeletePosiBtn.Click += new System.EventHandler(this.DeletePosiBtn_Click);
             // 
             // MainForm
             // 
@@ -174,8 +223,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.dataManTab.ResumeLayout(false);
             this.addData.ResumeLayout(false);
+            this.updateData.ResumeLayout(false);
             this.deleteData.ResumeLayout(false);
-            this.deleteData.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -191,8 +240,12 @@
         private System.Windows.Forms.Button ImpMold;
         private System.Windows.Forms.TabControl dataManTab;
         private System.Windows.Forms.TabPage addData;
+        private System.Windows.Forms.TabPage updateData;
         private System.Windows.Forms.TabPage deleteData;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button UpdatePosiBtn;
+        private System.Windows.Forms.Button UpdateMoldBtn;
+        private System.Windows.Forms.Button DeletePosiBtn;
+        private System.Windows.Forms.Button DeleteMoldBtn;
     }
 }
 

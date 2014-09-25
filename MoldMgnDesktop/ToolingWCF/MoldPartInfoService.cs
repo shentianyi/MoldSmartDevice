@@ -81,6 +81,7 @@ namespace ToolingWCF
                         Weight = m.Weight == null ? string.Empty : m.Weight.ToString(),
                         State = m.State,
                         StateCN = m.StateCN,
+                        MaxLendHour=(m.MaxLendHour.HasValue ? m.MaxLendHour.Value : 0),
                         ProjectId = m.ProjectID,
                         ProjectName = m.ProjectName,
                         Attach = attachRep.GetByMasterNR(moldNR)

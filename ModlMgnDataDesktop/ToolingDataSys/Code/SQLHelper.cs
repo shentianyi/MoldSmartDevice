@@ -28,7 +28,7 @@ namespace ToolingDataSys.Code
                 try
                 {
                     SqlCommand com = null;
-                    if (uniqQuery == null)
+                    if (uniqQuery != null)
                         com = new SqlCommand(uniqQuery, conn, tran);
                     else
                         com = new SqlCommand(insertQuery, conn, tran);
@@ -120,7 +120,8 @@ namespace ToolingDataSys.Code
                                 {
                                     checkResult = false;
                                     message.Add(new Message() { message = row[checker.CheckValueIndex] + checker.CheckMessage });
-                                } reader.Close();
+                                } 
+                                reader.Close();
                             }
 
                             if (checkResult)
@@ -145,6 +146,146 @@ namespace ToolingDataSys.Code
                                 {
                                     com.ExecuteNonQuery();
                                 }
+                        }
+                    }
+                    tran.Commit();
+                    conn.Close();
+
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
+                    message.Add(new Message() { message = "导入失败" + e.Message });
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return message;
+            }
+        }
+
+        public static List<Message> Update(string uniqQuery, string updateQuery, DataTable dt, SqlParameter[] parameters, int uniqRowIndex, string messageContent = "不存在，请先导入")
+        {
+            List<Message> message = new List<Message>();
+            using (SqlConnection conn = SQLHelper.GetConn())
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                try
+                {
+                    SqlCommand com = null;
+                    if (uniqQuery != null)
+                        com = new SqlCommand(uniqQuery, conn, tran);
+                    else
+                        com = new SqlCommand(updateQuery, conn, tran);
+
+                    foreach (SqlParameter par in parameters)
+                    {
+                        com.Parameters.Add(par);
+                    }
+                    SqlDataReader reader = null;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            com.CommandText = uniqQuery;
+                            for (int i = 0; i < parameters.Length; i++)
+                            {
+                                parameters[i].Value = row[i];
+                            }
+                            if (uniqQuery != null)
+                            {
+                                reader = com.ExecuteReader();
+                                bool exist = reader.HasRows;
+                                reader.Close();
+                                if (exist)
+                                {
+                                    com.CommandText = updateQuery;
+                                    com.ExecuteNonQuery();
+                                    message.Add(new Message() { message = row[uniqRowIndex] + "更新成功" });                                    
+                                }
+                                else
+                                {
+                                    message.Add(new Message() { message = row[uniqRowIndex] + messageContent });
+                                }
+                            }
+                            else
+                            {
+                                com.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    tran.Commit();
+                    conn.Close();
+
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
+                    message.Add(new Message() { message = "导入失败" + e.Message });
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return message;
+            }
+        }
+
+        public static List<Message> Delete(string uniqQuery, string deleteQuery, DataTable dt, SqlParameter[] parameters, int uniqRowIndex, string messageContent = "不存在，请先导入")
+        {
+            List<Message> message = new List<Message>();
+            using (SqlConnection conn = SQLHelper.GetConn())
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                try
+                {
+                    SqlCommand com = null;
+                    if (uniqQuery != null)
+                        com = new SqlCommand(uniqQuery, conn, tran);
+                    else
+                        com = new SqlCommand(deleteQuery, conn, tran);
+
+                    foreach (SqlParameter par in parameters)
+                    {
+                        com.Parameters.Add(par);
+                    }
+                    SqlDataReader reader = null;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            com.CommandText = uniqQuery;
+                            for (int i = 0; i < parameters.Length; i++)
+                            {
+                                parameters[i].Value = row[i];
+                            }
+                            if (uniqQuery != null)
+                            {
+                                reader = com.ExecuteReader();
+                                bool exist = reader.HasRows;
+                                reader.Close();
+                                if (exist)
+                                {
+                                    com.CommandText = deleteQuery;
+                                    com.ExecuteNonQuery();
+                                    message.Add(new Message() { message = row[uniqRowIndex] + "删除成功" });
+                                }
+                                else
+                                {
+                                    message.Add(new Message() { message = row[uniqRowIndex] + messageContent });
+                                }
+                            }
+                            else
+                            {
+                                com.ExecuteNonQuery();
+                            }
                         }
                     }
                     tran.Commit();

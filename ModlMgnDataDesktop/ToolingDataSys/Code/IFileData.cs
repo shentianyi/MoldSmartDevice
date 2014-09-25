@@ -6,8 +6,16 @@ using System.Data;
 
 namespace ToolingDataSys.Code
 {
+    public enum FileDataOperateType
+    {
+        Insert,
+        Update,
+        Delete
+    }
    public interface IFileData
     {
        List<Message> Insert(DataTable dt);
+       List<Message> Update(DataTable dt);
+       List<Message> Delete(DataTable dt);
     }
 }

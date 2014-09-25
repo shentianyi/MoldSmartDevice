@@ -15,6 +15,7 @@
       <xs:element minOccurs="0" name="FitConnector" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FitKnife" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxLendHour" type="xs:int" />
       <xs:element minOccurs="0" name="MoldNR" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
@@ -76,7 +77,13 @@
           <xs:element minOccurs="0" name="DisMinute" type="xs:double" />
           <xs:element minOccurs="0" name="DisTimeText" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="LendTime" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="MaxLendHour" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxLendHour" type="xs:anyType">
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="double" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
           <xs:element minOccurs="0" name="Minus" type="xs:boolean" />
           <xs:element minOccurs="0" name="ShouldReTime" type="xs:dateTime" />
         </xs:sequence>
