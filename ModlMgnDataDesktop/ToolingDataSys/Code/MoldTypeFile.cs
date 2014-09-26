@@ -21,7 +21,7 @@ namespace ToolingDataSys.Code
              new SqlParameter("@name", SqlDbType.VarChar),
              new SqlParameter("@cate", SqlDbType.VarChar)
             };
-            return SQLHelper.Insert(checkers,uniqString, insertString, dt, parameters, 0);
+            return SQLHelper.Insert(uniqString, insertString, dt, parameters, 0, checkers);
         }
         public List<Message> Update(DataTable dt)
         {

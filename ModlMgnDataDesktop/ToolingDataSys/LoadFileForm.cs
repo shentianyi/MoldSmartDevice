@@ -48,6 +48,10 @@ namespace ToolingDataSys
                 {
                     message = file.Delete(dt);
                 }
+                else if(type==FileDataOperateType.TransPosition){
+                    IMoldFile moldFile = file as IMoldFile;
+                    message = moldFile.TransPosition(dt);
+                }
 
                 if (message!=null && message.Count > 0)
                 {

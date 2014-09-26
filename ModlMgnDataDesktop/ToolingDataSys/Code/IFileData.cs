@@ -10,12 +10,13 @@ namespace ToolingDataSys.Code
     {
         Insert,
         Update,
-        Delete
+        Delete,
+        TransPosition
     }
-   public interface IFileData
+    public interface IFileData
     {
-       List<Message> Insert(DataTable dt);
-       List<Message> Update(DataTable dt);
-       List<Message> Delete(DataTable dt);
+        List<Message> Insert(DataTable dt);
+        List<Message> Update(DataTable dt);
+        List<Message> Delete(DataTable dt);
     }
 }

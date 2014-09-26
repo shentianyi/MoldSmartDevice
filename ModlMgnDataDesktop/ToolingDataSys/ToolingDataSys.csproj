@@ -54,6 +54,7 @@
     <Compile Include="Code\ForeignKeyChecker.cs" />
     <Compile Include="Code\IFileData.cs" />
     <Compile Include="Code\ImExcel.cs" />
+    <Compile Include="Code\IMoldFile.cs" />
     <Compile Include="Code\Message.cs" />
     <Compile Include="Code\MoldCateFile.cs" />
     <Compile Include="Code\MoldFile.cs" />

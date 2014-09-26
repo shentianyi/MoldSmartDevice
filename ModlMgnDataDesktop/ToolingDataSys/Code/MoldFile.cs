@@ -7,7 +7,7 @@ using System.Data;
 
 namespace ToolingDataSys.Code
 {
-    public class MoldFile : IFileData
+    public class MoldFile : IFileData, IMoldFile
     {
         public List<Message> Insert(System.Data.DataTable dt)
         {
@@ -19,7 +19,7 @@ namespace ToolingDataSys.Code
                 SqlDataReader reader = null;
                 try
                 {
-                    string q = @"if exists() begin if exists() begin if exists( ) begin    end end end";
+                    string q = @"if exists() begin if exists() begin if exists( ) begin  end end end";
 
                     List<ForeignKeyChecker> checkers = new List<ForeignKeyChecker>() {
                         new ForeignKeyChecker(){
@@ -45,8 +45,6 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
   values(@guid,(select PositionID from Position where PositionNR=@posi),@posi,@date,1,3,@nr,'DATA-ADMIN');
   insert into MoldLastRecord(MoldNR,StorageRecordNR) values(@nr,@guid);";
 
-                    //                    string updateQuery = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
-                    //Producer=@producer,Weight=@weight,Material=@material";
 
                     SqlCommand com = new SqlCommand(q, conn, tran);
                     SqlParameter nr = new SqlParameter("@nr", SqlDbType.VarChar);
@@ -152,10 +150,8 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
         public List<Message> Update(DataTable dt)
         {
             string uniqString = "select * from Mold where MoldNr=@nr";
-
             string updateString = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
             Producer=@producer,Weight=@weight,Material=@material where MoldNr=@nr";
-
             return SQLHelper.Update(uniqString, updateString, dt, GetParams(), 0);
         }
 
@@ -186,6 +182,31 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
             return SQLHelper.Delete(uniqString, deleteString, dt,
                 new SqlParameter[] { 
                      new SqlParameter("@nr", SqlDbType.VarChar)
+            }, 0);
+        }
+
+        public List<Message> TransPosition(DataTable dt)
+        {
+            List<ForeignKeyChecker> checkers = new List<ForeignKeyChecker>() {
+            new ForeignKeyChecker(){CheckQuery="select * from Position where PositionNR=@posi",CheckValueIndex=1,CheckMessage="新库位不存在，请先导入库位"}};
+
+            string uniqString = "select * from Mold where MoldNr=@nr";
+            string updateString = @"update UniqStorage set PositionId =(SELECT  PositionID  FROM  Position where PositionNR='NeoniMoldTransfer01')
+where PositionId in (SELECT PositionID  FROM  Position where PositionNR=@posi);
+update UniqStorage set PositionId =(SELECT  top 1  PositionID  FROM  Position where PositionNR=@posi)
+where UniqNR=@nr;
+if (select [State] from Mold where MoldNR=@nr)=1
+begin 
+ insert into StorageRecord(StorageRecordNR,PositionId,Destination,[Date],Quantity,RecordType,TargetNR,OperatorId)
+ values(@guid,(select top 1 PositionID from Position where PositionNR=@posi),@posi,GETDATE(),1,5,@nr,'DATA-ADMIN');
+ update MoldLastRecord set StorageRecordNR=@guid where MoldNR=@nr;
+end";
+            SqlParameter guid = new SqlParameter("@guid", SqlDbType.UniqueIdentifier);
+           
+            return SQLHelper.Update(uniqString, updateString, dt, new SqlParameter[] { 
+                     new SqlParameter("@nr", SqlDbType.VarChar),
+                      new SqlParameter("@posi", SqlDbType.VarChar),
+                      new SqlParameter("@guid", SqlDbType.UniqueIdentifier)
             }, 0);
         }
     }

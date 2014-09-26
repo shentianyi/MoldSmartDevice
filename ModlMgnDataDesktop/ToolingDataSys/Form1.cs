@@ -86,6 +86,12 @@ namespace ToolingDataSys
         {
             LoadFileForm file = new LoadFileForm(new MoldFile(), FileDataOperateType.Delete);
             file.ShowDialog();
+        }
+
+        private void UpdateMoldPosiBtn_Click(object sender, EventArgs e)
+        {
+            LoadFileForm file = new LoadFileForm(new MoldFile(), FileDataOperateType.TransPosition);
+            file.ShowDialog();
         } 
          
     }

@@ -43,6 +43,7 @@
             this.deleteData = new System.Windows.Forms.TabPage();
             this.DeleteMoldBtn = new System.Windows.Forms.Button();
             this.DeletePosiBtn = new System.Windows.Forms.Button();
+            this.UpdateMoldPosiBtn = new System.Windows.Forms.Button();
             this.dataManTab.SuspendLayout();
             this.addData.SuspendLayout();
             this.updateData.SuspendLayout();
@@ -150,6 +151,7 @@
             // 
             // updateData
             // 
+            this.updateData.Controls.Add(this.UpdateMoldPosiBtn);
             this.updateData.Controls.Add(this.UpdatePosiBtn);
             this.updateData.Controls.Add(this.UpdateMoldBtn);
             this.updateData.Location = new System.Drawing.Point(4, 22);
@@ -212,6 +214,16 @@
             this.DeletePosiBtn.UseVisualStyleBackColor = true;
             this.DeletePosiBtn.Click += new System.EventHandler(this.DeletePosiBtn_Click);
             // 
+            // UpdateMoldPosiBtn
+            // 
+            this.UpdateMoldPosiBtn.Location = new System.Drawing.Point(367, 36);
+            this.UpdateMoldPosiBtn.Name = "UpdateMoldPosiBtn";
+            this.UpdateMoldPosiBtn.Size = new System.Drawing.Size(113, 48);
+            this.UpdateMoldPosiBtn.TabIndex = 12;
+            this.UpdateMoldPosiBtn.Text = "更新模具库位";
+            this.UpdateMoldPosiBtn.UseVisualStyleBackColor = true;
+            this.UpdateMoldPosiBtn.Click += new System.EventHandler(this.UpdateMoldPosiBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -246,6 +258,7 @@
         private System.Windows.Forms.Button UpdateMoldBtn;
         private System.Windows.Forms.Button DeletePosiBtn;
         private System.Windows.Forms.Button DeleteMoldBtn;
+        private System.Windows.Forms.Button UpdateMoldPosiBtn;
     }
 }
 
