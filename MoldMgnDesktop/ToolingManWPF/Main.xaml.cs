@@ -30,7 +30,7 @@ namespace ToolingManWPF
             InitializeComponent();
             dTimer.IsEnabled = true;
 
-            dTimer.Interval = new TimeSpan(0, 0, 10);
+            dTimer.Interval = new TimeSpan(0, 30, 0);
             dTimer.Tick += new EventHandler(DataTimer_Tick);
             dTimer.Start();
         }
