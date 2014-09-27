@@ -13,6 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using ToolingManWPF.ConditionServiceReference;
+using System.Windows.Threading;
+using ToolingManWPF.MoldPartInfoServiceReference;
 
 namespace ToolingManWPF
 {
@@ -21,15 +23,32 @@ namespace ToolingManWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer dTimer = new System.Windows.Threading.DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
+            dTimer.IsEnabled = true;
+
+            dTimer.Interval = new TimeSpan(0, 0, 10);
+            dTimer.Tick += new EventHandler(DataTimer_Tick);
+            dTimer.Start();
+        }
+        private void DataTimer_Tick(object sender, EventArgs e)
+        {
+            if (!WarnAlert.Shown)
+            {
+                MoldPartInfoServiceClient client = new MoldPartInfoServiceClient();
+                List<MoldWarnInfo> warnInfos = client.GetMoldWarnInfo(MoldWarnType.OutTime);
+                if (warnInfos.Count > 0)
+                {
+                    new WarnAlert(warnInfos).Show();
+                }
+            }
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //Search searchWin = new Search();
-            //searchWin.Show();
+        { 
             Search.Instance.Show();
             Search.Instance.Activate();
         }
