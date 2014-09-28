@@ -1,0 +1,1278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldCategoryRepository.Add(ClassLibrary.Data.MoldCategory)">
+            <summary>
+            新建模具类别
+            </summary>
+            <param name="moldCate">模具类别</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldCategoryRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.MoldCategory})">
+            <summary>
+            新建多个模具类别
+            </summary>
+            <param name="moldCates">模具类别列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldCategoryRepository.GetById(System.String)">
+            <summary>
+            根据模具类别号删除模具类别
+            </summary>
+            <param name="moldCateId">模具类别号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldCategoryRepository.DeleteById(System.String)">
+            <summary>
+            根据模具类别号获得单个模具类别
+            </summary>
+            <param name="moldCateId">模具类别号</param>
+            <returns>模具类别实例</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldCategoryRepository.All">
+            <summary>
+            获得全部模具类别
+            </summary>
+            <returns>模具类别实例列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.MoldRepository">
+            <summary>
+            模具仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.Add(ClassLibrary.Data.Mold)">
+            <summary>
+            新建模具
+            </summary>
+            <param name="mold">模具</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Mold})">
+            <summary>
+            新建多个模具
+            </summary>
+            <param name="molds">模具列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.DeleteById(System.String)">
+            <summary>
+            根据模具号删除模具
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.DeleteByMoldTypeId(System.String)">
+            <summary>
+            根据模具型号号删除模具
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+        </member>
+        <!-- 对于成员“M:ClassLibrary.Repository.Interface.IMoldRepository.GetById(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetByMoldTypeId(System.String)">
+            <summary>
+            根据模具型号号获得模具
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetByProjectId(System.String)">
+            <summary>
+            根据项目号获得模具
+            </summary>
+            <param name="projectId">项目号</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetByState(ClassLibrary.ENUM.MoldStateType)">
+            <summary>
+            根据模具状态获得模具
+            </summary>
+            <param name="moldState">模具状态</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetMoldViewByMoldNR(System.String)">
+            <summary>
+             根据模具号获得模具视图
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具视图</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetByMutiConditions(ClassLibrary.Data.MoldSearchCondition)">
+             <summary>
+            根据多条件获得模具
+            </summary>
+            <param name="condition">查询条件</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetByWarnType(ClassLibrary.ENUM.MoldWarnType)">
+            <summary>
+            根据模具警报状态获得模具视图
+            </summary>
+            <param name="type">模具警报状态</param>
+            <returns>模具视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetMoldCurrPosiByRecordNR(System.Guid)">
+            <summary>
+            根据库存记录号获得模具当前位置
+            </summary>
+            <param name="storageRecordNR">库存记录号</param>
+            <returns>模具当前位置</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.GetMoldCurrPosiByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具当前位置
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具当前位置</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.MoldExsit(System.String)">
+            <summary>
+            根据模具号判断模具是否存在
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>判断结果</returns>
+        </member>
+        <!-- 对于成员“M:ClassLibrary.Repository.Interface.IMoldRepository.GetMoldNrByPosiNr(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ClassLibrary.Repository.Interface.IMoldRepository.All">
+            <summary>
+            获得全部模具
+            </summary>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化模具仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.Add(ClassLibrary.Data.Mold)">
+            <summary>
+            新建模具
+            </summary>
+            <param name="mold">模具</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Mold})">
+            <summary>
+            新建多个模具
+            </summary>
+            <param name="molds">模具列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.DeleteById(System.String)">
+            <summary>
+            根据模具号删除模具
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.DeleteByMoldTypeId(System.String)">
+            <summary>
+            根据模具型号号删除模具
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetById(System.String)">
+            <summary>
+            根据模具号获得模具
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具实例</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetByMoldTypeId(System.String)">
+            <summary>
+            根据模具型号号获得模具
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetByProjectId(System.String)">
+            <summary>
+            根据项目号获得模具
+            </summary>
+            <param name="projectId">项目号</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetByState(ClassLibrary.ENUM.MoldStateType)">
+            <summary>
+            根据模具状态获得模具
+            </summary>
+            <param name="moldState">模具状态</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetMoldViewByMoldNR(System.String)">
+            <summary>
+             根据模具号获得模具视图
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具视图</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetByMutiConditions(ClassLibrary.Data.MoldSearchCondition)">
+             <summary>
+            根据多条件获得模具
+            </summary>
+            <param name="condition">查询条件</param>
+            <returns>模具列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetByWarnType(ClassLibrary.ENUM.MoldWarnType)">
+            <summary>
+            根据模具警报状态获得模具视图
+            </summary>
+            <param name="type">模具警报状态</param>
+            <returns>模具视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetMoldCurrPosiByRecordNR(System.Guid)">
+            <summary>
+            根据库存记录号获得模具当前位置
+            </summary>
+            <param name="storageRecordNR">库存记录号</param>
+            <returns>模具当前位置</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetMoldCurrPosiByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具当前位置
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具当前位置</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.MoldExsit(System.String)">
+            <summary>
+            根据模具号判断模具是否存在
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.GetMoldNrByPosiNr(System.String)">
+            <summary>
+            根据库存位置号获得模具号
+            </summary>
+            <param name="posiNr">库存位置号</param>
+            <returns>模具号</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldRepository.All">
+            <summary>
+            获得全部模具
+            </summary>
+            <returns>模具列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Data.StorageRecord">
+            <summary>
+            partial class applyrecord
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IPositionRepository.GetByFacilictyNR(System.String)">
+            <summary>
+            根据设备号获得库位
+            </summary>
+            <param name="facilictyNR">设备号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IPositionRepository.GetByWarehouseNRAndPositionNR(System.String,System.String)">
+            <summary>
+            根据仓库号、库位号获得库位
+            </summary>
+            <param name="warehouseNR">仓库号</param>
+            <param name="positionNR">库位号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IPositionRepository.CheckPositionAvailable(System.String,System.String,System.Int32)">
+            <summary>
+            根据仓库号、库位号判断库位是否可用
+            </summary>
+            <param name="warehouseNR">仓库号</param>
+            <param name="positionNR">库位号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IPositionRepository.GetPartPoolPosition(System.String)">
+            <summary>
+            根据零件缓存区号获得库位
+            </summary>
+            <param name="poolPosiNR">缓存区号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IPositionRepository.PositionExsit(System.String)">
+            <summary>
+            根据库位号判断库位是否存在
+            </summary>
+            <param name="posiNr">库位号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.Add(ClassLibrary.Data.MoldType)">
+            <summary>
+            新建模具型号
+            </summary>
+            <param name="moldType">模具型号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.Add(System.Collections.Generic.List{ClassLibrary.Data.MoldType})">
+            <summary>
+            新建多个模具型号
+            </summary>
+            <param name="moldTypes">模具型号列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.GetById(System.String)">
+            <summary>
+            根据模具型号号获得模具型号
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+            <returns>模具型号</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.GetByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具型号
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具型号</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.DeleteById(System.String)">
+            <summary>
+            根据模具型号号删除模具型号
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldTypeRepositotry.All">
+            <summary>
+            获得全部模具型号
+            </summary>
+            <returns>模具型号列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.StorageRecordRepository">
+            <summary>
+            库存记录仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.Add(ClassLibrary.Data.StorageRecord)">
+            <summary>
+            新建库存记录
+            </summary>
+            <param name="storageRecord">库存记录</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetByStorageNR(System.Guid)">
+            <summary>
+            根据库存记录号获得库存记录
+            </summary>
+            <param name="storageNR">库存记录号</param>
+            <returns>库存记录</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetByOperatorId(System.String)">
+            <summary>
+            根据操作人员号获得库存记录
+            </summary>
+            <param name="operatorId">操作人员号</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetByRecordType(ClassLibrary.ENUM.StorageRecordType)">
+            <summary>
+            根据起止日期获得库存记录
+            </summary>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetByRecordDate(System.DateTime,System.DateTime)">
+            <summary>
+            根据模具号、操作人员号、起止日期获得库存记录
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetMoldApplyRecordsByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作人员号、起止日期获得库存记录
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetMoldApplyRecordsByMoldNR(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作人员号、起止日期获得库存记录，进行分页
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="pageIndex">页号</param>
+            <param name="pageSize">页数量</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetStorageRecordByTargerNR(System.String)">
+            <summary>
+            根据库存记录目标号获得库存记录
+            </summary>
+            <param name="targetNR">目标号</param>
+            <returns>库存记录</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.Delete(System.Collections.Generic.List{ClassLibrary.Data.StorageRecord})">
+            <summary>
+            根据库存记录删除
+            </summary>
+            <param name="records">库存记录列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.All">
+            <summary>
+            获得全部库存记录
+            </summary>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IStorageRecordRepository.GetByTypesDate(ClassLibrary.ENUM.StorageRecordType[],System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据类型，时间获得记录
+            </summary>
+            <param name="types">类型</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化库存记录仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.Add(ClassLibrary.Data.StorageRecord)">
+            <summary>
+            新建库存记录
+            </summary>
+            <param name="storageRecord">库存记录</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetByStorageNR(System.Guid)">
+            <summary>
+            根据库存记录号获得库存记录
+            </summary>
+            <param name="storageNR">库存记录号</param>
+            <returns>库存记录</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetByOperatorId(System.String)">
+            <summary>
+            根据操作人员号获得库存记录
+            </summary>
+            <param name="operatorId">操作人员号</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetByRecordType(ClassLibrary.ENUM.StorageRecordType)">
+            <summary>
+            根据库存记录类型获得库存记录
+            </summary>
+            <param name="recordType">库存记录类型</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetByRecordDate(System.DateTime,System.DateTime)">
+            <summary>
+            根据起止日期获得库存记录
+            </summary>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetMoldApplyRecordsByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作人员号、起止日期获得库存记录
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetMoldApplyRecordsByMoldNR(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作人员号、起止日期获得库存记录，进行分页
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="pageIndex">页号</param>
+            <param name="pageSize">页数量</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetStorageRecordByTargerNR(System.String)">
+            <summary>
+            根据库存记录目标号获得库存记录
+            </summary>
+            <param name="targetNR">目标号</param>
+            <returns>库存记录</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.Delete(System.Collections.Generic.List{ClassLibrary.Data.StorageRecord})">
+            <summary>
+            根据库存记录删除
+            </summary>
+            <param name="records">库存记录列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.All">
+            <summary>
+            获得全部库存记录
+            </summary>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.StorageRecordRepository.GetByTypesDate(ClassLibrary.ENUM.StorageRecordType[],System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据类型，时间获得记录
+            </summary>
+            <param name="types">类型</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>库存记录列表</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.Produce">
+            <summary>
+            正常生产记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.Mantain">
+            <summary>
+            维护记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.Test">
+            <summary>
+            实验记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.InStore">
+            <summary>
+            入库记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.OutStore">
+            <summary>
+            出库记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.MoveStore">
+            <summary>
+            移库记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.ScrapStore">
+            <summary>
+            报废记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.Return">
+            <summary>
+            归还记录
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.StorageRecordType.MoveWStation">
+            <summary>
+            移动工作台记录
+            </summary>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.MoldLastRecordRepository">
+            <summary>
+            模具最新记录仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldLastRecordRepository.Add(ClassLibrary.Data.MoldLastRecord)">
+            <summary>
+            新建单个模具最新记录
+            </summary>
+            <param name="record">模具最新记录</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldLastRecordRepository.GetByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具最新记录
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具最新记录实例</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IMoldLastRecordRepository.MoldInStored(System.String)">
+            <summary>
+            判断模具是否入库，避免重复入库
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldLastRecordRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化模具最新记录仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldLastRecordRepository.Add(ClassLibrary.Data.MoldLastRecord)">
+            <summary>
+            新建单个模具最新记录
+            </summary>
+            <param name="record">模具最新记录</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldLastRecordRepository.GetByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具最新记录
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具最新记录实例</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldLastRecordRepository.MoldInStored(System.String)">
+            <summary>
+            判断模具是否入库，避免重复入库
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.PositionPrefixType.Workstation">
+            <summary>
+            工作台前缀
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.PositionPrefixType.Mantainstation">
+            <summary>
+            维护台前缀
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.PositionPrefixType.Teststation">
+            <summary>
+            实验台前缀
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.PositionPrefixType.InPosition">
+            <summary>
+            库位前缀
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IProjectRepository.Add(ClassLibrary.Data.Project)">
+            <summary>
+             新建成本中心
+             </summary>
+             <param name="project">成本中心</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IProjectRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Project})">
+            <summary>
+            新建多个成本中心
+            </summary>
+            <param name="projects">成本中心列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IProjectRepository.GetProjectById(System.String)">
+            <summary>
+             根据成本中心号获得成本中心
+            </summary>
+            <param name="projectId">成本中心号</param>
+            <returns>成本中心</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IProjectRepository.DeleteById(System.String)">
+            <summary>
+            根据成本中心号获得成本中心
+            </summary>
+            <param name="projectId">成本中心号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IProjectRepository.All">
+            <summary>
+            获得全部成本中心
+            </summary>
+            <returns>成本中心列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.ReportRepository">
+            <summary>
+            报告仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IReportRepository.Add(ClassLibrary.Data.Report)">
+            <summary>
+            新建报告
+            </summary>
+            <param name="report">报告</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IReportRepository.GetReportViewByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号获得报告视图
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorId">操作员号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IReportRepository.GetReportViewByMoldNR(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号获得报告，进行分页
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorId">操作员号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="pageIndex">页号</param>
+            <param name="pageSize">页数量</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IReportRepository.GetReportViewByDate(ClassLibrary.ENUM.ReportType,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据时间获得报告
+            </summary>
+            <param name="type">报告类型</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ReportRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化报告仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ReportRepository.Add(ClassLibrary.Data.Report)">
+            <summary>
+            新建报告
+            </summary>
+            <param name="report">报告</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ReportRepository.GetReportViewByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号获得报告视图
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorId">操作员号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ReportRepository.GetReportViewByMoldNR(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号获得报告，进行分页
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorId">操作员号</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <param name="pageIndex">页号</param>
+            <param name="pageSize">页数量</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ReportRepository.GetReportViewByDate(ClassLibrary.ENUM.ReportType,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据时间获得报告
+            </summary>
+            <param name="type">报告类型</param>
+            <param name="startDate">开始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns>报告视图列表</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldWarnType.NULL">
+            <summary>
+            占位符
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldWarnType.OutTime">
+            <summary>
+            超期状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldWarnType.InTime">
+            <summary>
+            未超期状态
+            </summary>
+        </member>
+        <member name="T:ClassLibrary.Data.MoldSearchCondition">
+            <summary>
+            the mold search condition for searhing the mold
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IEmployeeRepository.Add(ClassLibrary.Data.Employee)">
+            <summary>
+            新建单个职工
+            </summary>
+            <param name="employee">职工</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IEmployeeRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Employee})">
+            <summary>
+            新建多个职工
+            </summary>
+            <param name="employees">职工列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IEmployeeRepository.Exist(System.String)">
+            <summary>
+            根据职工工号，判断职工是否错在
+            </summary>
+            <param name="empNr">职工工号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="F:ClassLibrary.Repository.Implement.MoldCategoryRepository.context">
+            <summary>
+            模具类别仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化模具类别仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.Add(ClassLibrary.Data.MoldCategory)">
+            <summary>
+            新建模具类别
+            </summary>
+            <param name="moldCate">模具类别</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.MoldCategory})">
+            <summary>
+            新建多个模具类别
+            </summary>
+            <param name="moldCates">模具类别列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.DeleteById(System.String)">
+            <summary>
+            根据模具类别号删除模具类别
+            </summary>
+            <param name="moldCateId">模具类别号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.GetById(System.String)">
+            <summary>
+            根据模具类别号获得单个模具类别
+            </summary>
+            <param name="moldCateId">模具类别号</param>
+            <returns>模具类别实例</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldCategoryRepository.All">
+            <summary>
+            获得全部模具类别
+            </summary>
+            <returns>模具类别实例列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.ProjectRepository">
+            <summary>
+            成本中心仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化成本中心仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.Add(ClassLibrary.Data.Project)">
+            <summary>
+             新建成本中心
+             </summary>
+             <param name="project">成本中心</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Project})">
+            <summary>
+            新建多个成本中心
+            </summary>
+            <param name="projects">成本中心列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.GetProjectById(System.String)">
+            <summary>
+             根据成本中心号获得成本中心
+            </summary>
+            <param name="projectId">成本中心号</param>
+            <returns>成本中心</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.DeleteById(System.String)">
+            <summary>
+            根据成本中心号获得成本中心
+            </summary>
+            <param name="projectId">成本中心号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.ProjectRepository.All">
+            <summary>
+            获得全部成本中心
+            </summary>
+            <returns>成本中心列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.WorkstationRepository">
+            <summary>
+            操作台仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IWorkstationRepository.GetById(System.String)">
+            <summary>
+            根据操作台号获取操作台
+            </summary>
+            <param name="workstationId">操作台号</param>
+            <returns>操作台</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IWorkstationRepository.OverAppliedMold(System.String)">
+            <summary>
+            根据操作台号，判断操作台是否超借
+            </summary>
+            <param name="workstationId">操作台号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IWorkstationRepository.Exist(System.String)">
+            <summary>
+            根据操作台号，判断是否存在
+            </summary>
+            <param name="workstationNR">操作台号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WorkstationRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化操作台仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WorkstationRepository.GetById(System.String)">
+            <summary>
+            根据操作台号获取操作台
+            </summary>
+            <param name="workstationId">操作台号</param>
+            <returns>操作台</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WorkstationRepository.OverAppliedMold(System.String)">
+            <summary>
+            根据操作台号，判断操作台是否超借
+            </summary>
+            <param name="workstationId">操作台号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WorkstationRepository.Exist(System.String)">
+            <summary>
+            根据操作台号，判断是否存在
+            </summary>
+            <param name="workstationNR">操作台号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IUniqStorageRepository.Add(ClassLibrary.Data.UniqStorage)">
+            <summary>
+            添加唯一件库存
+            </summary>
+            <param name="uniqStorage">唯一件库存</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IUniqStorageRepository.DeleteByMoldNr(System.String)">
+            <summary>
+            根据模具号删除唯一件库存
+            </summary>
+            <param name="moldNr">模具号</param>
+        </member>
+        <member name="F:ClassLibrary.ENUM.ReportType.MaintainReport">
+            <summary>
+            维护状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.ReportType.TestReport">
+            <summary>
+            实验
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IAttachmentRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Attachment})">
+            <summary>
+            新建多个附件 
+            </summary>
+            <param name="attachments">附件列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IAttachmentRepository.GetByMasterNR(System.String)">
+            <summary>
+            根据附主号获得附件列表
+            </summary>
+            <param name="masterNR">附主号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IAttachmentRepository.GetSingleByMasterNR(System.String)">
+            <summary>
+            根据辅助号获得单个附件
+            </summary>
+            <param name="masterNR">附主号</param>
+            <returns>附件实例</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.WarehouseType.UniqWarehouse">
+            <summary>
+            唯一件仓库
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.WarehouseType.PartWarehouse">
+            <summary>
+            批量件仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.IWarehouseRepository.GetWarehouseByType(ClassLibrary.ENUM.WarehouseType)">
+            <summary>
+            根据仓库类型获得仓库
+            </summary>
+            <param name="warehouseType">仓库类型</param>
+            <returns>仓库列表</returns>
+        </member>
+        <member name="M:ClassLibrary.Utilities.EnumUtil.GetEnumDescriptionByEnumValue(System.Enum)">
+            <summary>
+            根据枚举值获得枚举描述
+            </summary>
+            <param name="enumValue">枚举值</param>
+            <returns>枚举描述</returns>
+        </member>
+        <member name="M:ClassLibrary.Utilities.EnumUtil.GetEnumItemList(System.String)">
+            <summary>
+            根据枚举类型获得枚举列表
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <returns>枚举列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.WarehouseRepository">
+            <summary>
+            仓库仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WarehouseRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化仓库仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.WarehouseRepository.GetWarehouseByType(ClassLibrary.ENUM.WarehouseType)">
+            <summary>
+            根据仓库类型获得仓库
+            </summary>
+            <param name="warehouseType">仓库类型</param>
+            <returns>仓库列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Data.Mold">
+            <summary>
+            partial class mold
+            </summary>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.MoldTypeRepository">
+            <summary>
+            模具类别仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化模具类别仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.Add(ClassLibrary.Data.MoldType)">
+            <summary>
+            新建模具型号
+            </summary>
+            <param name="moldType">模具型号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.MoldType})">
+            <summary>
+            新建多个模具型号
+            </summary>
+            <param name="moldTypes">模具型号列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.GetByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具型号
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具型号</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.DeleteById(System.String)">
+            <summary>
+            根据模具型号号删除模具型号
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.GetById(System.String)">
+            <summary>
+            根据模具型号号获得模具型号
+            </summary>
+            <param name="moldTypeId">模具型号号</param>
+            <returns>模具型号</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.MoldTypeRepository.All">
+            <summary>
+            获得全部模具型号
+            </summary>
+            <returns>模具型号列表</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Interface.PositionRepository">
+            <summary>
+            库位仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化库位仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.GetByFacilictyNR(System.String)">
+            <summary>
+            根据设备号获得库位
+            </summary>
+            <param name="facilictyNR">设备号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.GetByWarehouseNRAndPositionNR(System.String,System.String)">
+            <summary>
+            根据仓库号、库位号获得库位
+            </summary>
+            <param name="warehouseNR">仓库号</param>
+            <param name="positionNR">库位号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.CheckPositionAvailable(System.String,System.String,System.Int32)">
+            <summary>
+            根据仓库号、库位号判断库位是否可用
+            </summary>
+            <param name="warehouseNR">仓库号</param>
+            <param name="positionNR">库位号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.GetPartPoolPosition(System.String)">
+            <summary>
+            根据零件缓存区号获得库位
+            </summary>
+            <param name="poolPosiNR">缓存区号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.PositionRepository.PositionExsit(System.String)">
+            <summary>
+            根据库位号判断库位是否存在
+            </summary>
+            <param name="posiNr">库位号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="T:ClassLibrary.Repository.Interface.UniqStorageRepository">
+            <summary>
+            唯一件库存仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.UniqStorageRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化唯一件库存仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.UniqStorageRepository.Add(ClassLibrary.Data.UniqStorage)">
+            <summary>
+            添加唯一件库存
+            </summary>
+            <param name="uniqStorage">唯一件库存</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Interface.UniqStorageRepository.DeleteByMoldNr(System.String)">
+            <summary>
+            根据模具号删除唯一件库存
+            </summary>
+            <param name="moldNr">模具号</param>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldReturnStateType.Normal">
+            <summary>
+            正常状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldReturnStateType.NeedMantain">
+            <summary>
+            需维护状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldReturnStateType.Broken">
+            <summary>
+            已破损状态
+            </summary>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.AttachmentRepository">
+            <summary>
+            附件仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.AttachmentRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化附件仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.AttachmentRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Attachment})">
+            <summary>
+            新建多个附件 
+            </summary>
+            <param name="attachments">附件列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.AttachmentRepository.GetByMasterNR(System.String)">
+            <summary>
+            根据附主号获得附件列表
+            </summary>
+            <param name="masterNR">附主号</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.AttachmentRepository.GetSingleByMasterNR(System.String)">
+            <summary>
+            根据辅助号获得单个附件
+            </summary>
+            <param name="masterNR">附主号</param>
+            <returns>附件实例</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.WorkstationType.Workstation">
+            <summary>
+            工作台
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.WorkstationType.Maintainsation">
+            <summary>
+            为后台
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.WorkstationType.Teststation">
+            <summary>
+            实验台
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldStateType.NULL">
+            <summary>
+            占位符
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldStateType.NotReturned">
+            <summary>
+            未归还状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldStateType.Normal">
+            <summary>
+            正常状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldStateType.NeedMantain">
+            <summary>
+            需维护状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldStateType.Broken">
+            <summary>
+            已破损状态
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.AttachmentType.PICTURE">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.AttachmentType.DOCUMENT">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="T:ClassLibrary.Repository.Implement.EmployeeRepository">
+            <summary>
+            员工仓库
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.EmployeeRepository.#ctor(ClassLibrary.Data.IUnitOfWork)">
+            <summary>
+            实例化员工仓库
+            </summary>
+            <param name="_context"></param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.EmployeeRepository.Add(ClassLibrary.Data.Employee)">
+            <summary>
+            新建单个职工
+            </summary>
+            <param name="employee">职工</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.EmployeeRepository.Add(System.Collections.Generic.List{ClassLibrary.Data.Employee})">
+            <summary>
+            新建多个职工
+            </summary>
+            <param name="employees">职工列表</param>
+        </member>
+        <member name="M:ClassLibrary.Repository.Implement.EmployeeRepository.Exist(System.String)">
+            <summary>
+            根据职工工号，判断职工是否错在
+            </summary>
+            <param name="empNr">职工工号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldUseType.Produce">
+            <summary>
+            正常生产使用
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldUseType.Mantain">
+            <summary>
+            维护使用
+            </summary>
+        </member>
+        <member name="F:ClassLibrary.ENUM.MoldUseType.Test">
+            <summary>
+            实验使用
+            </summary>
+        </member>
+    </members>
+</doc>

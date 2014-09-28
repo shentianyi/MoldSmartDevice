@@ -1,0 +1,794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToolingManWPF</name>
+    </assembly>
+    <members>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.Update(System.String)">
+            <summary>
+            update the node
+            </summary>
+            <param name="node">name of node</param>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.Get(System.String)">
+            <summary>
+            get value by key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.GetAllNodeValue">
+            <summary>
+            get all values of node
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.Set(System.String,System.Object)">
+            <summary>
+            set key and value
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.Save">
+            <summary>
+            save the changes
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.ConfigUtil.RemoveKeys">
+            <summary>
+            remove all keys
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldApply">
+            <summary>
+            MoldApply.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MoldApply
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.#ctor(ToolingManWPF.MoldPartInfoServiceReference.MoldBaseInfo)">
+            <summary>
+            实例化窗体
+            </summary>
+            <param name="moldNR">模具基本信息</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗体加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.MoldApplyBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-申领模具
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.LoadMoldUseTypeCondition">
+            <summary>
+            加载模具使用类型条件
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.ApplicantNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦工作台输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.WorkstationNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-模具号输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.EnsureMoldNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦申领按钮
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldApply.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.WarnAlert">
+            <summary>
+            WarnAlert.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WarnAlert
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.WarnAlert.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.ToolInfo">
+            <summary>
+            ToolInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ToolInfo
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.ToolInfo.#ctor(System.String)">
+            <summary>
+            navigate from search UI
+            </summary>
+            <param name="moldNR"></param>
+        </member>
+        <member name="M:ToolingManWPF.ToolInfo.BasicInfoSP_MouseUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            show basic info of mold
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ToolingManWPF.ToolInfo.DynamicInfo_MouseUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            show dynamic info of mold
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ToolingManWPF.ToolInfo.InOut_MouseUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            show in and out info of mold
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ToolingManWPF.ToolInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.BasiscInfo">
+            <summary>
+            BasiscInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            BasiscInfo
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.#ctor(System.String)">
+            <summary>
+            实例化页面
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.Page_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            页面加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.link_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            链接点击事件-查看文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.OKBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-上传文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.ChangePosiBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-显示模具更改库位窗口
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.ChooseFileBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-显示浏览文件窗口
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.RemoveFileBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-移除文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.BasiscInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.Search">
+            <summary>
+            Search.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Search
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Search.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Search.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗体加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.SearchBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-搜索模具
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.LoadConditions">
+            <summary>
+            加载选择条件
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Search.DetailBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-查看模具详细信息
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.ApplyBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-申领模具
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.ReturnBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-归还模具
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.MoldInStoreBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具入库
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Search.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldMoveStore">
+            <summary>
+            MoldMoveStore.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MoldMoveStore
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldMoveStore.#ctor(System.String,System.String)">
+            <summary>
+            实例化窗体
+            </summary>
+            <param name="moldNr">模具号</param>
+            <param name="moldPosi">模具库位号</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldMoveStore.OKBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具移库
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldMoveStore.CheckMoldBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-判断模具移库合法性
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldMoveStore.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldWarnInfos">
+            <summary>
+            MoldWarnInfos.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MoldWarnInfos
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗体加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.LoadConditions">
+            <summary>
+            加载模具警报条件
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.SearchBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具警报信息搜索
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldWarnInfos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.ReleaseInfo">
+            <summary>
+            ReleaseInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ReleaseInfo
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.ReleaseInfo.#ctor(System.String)">
+            <summary>
+            实例化页面
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.ReleaseInfo.QueryBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-查询放行信息
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.ReleaseInfo.MoldReleaseInfoDG_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            选择行改变事件-查询放行信息附加文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.ReleaseInfo.Hyperlink_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            链接点击事件-查看文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.ReleaseInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.FileUtil.SavaFIle(System.String,System.Byte[])">
+            <summary>
+            sava the data as file in the file path
+            </summary>
+            <param name="filepath">file save path</param>
+            <param name="data">file data in form of byte[]</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.FileFilterUtil.GetImageFilters">
+            <summary>
+            get image filter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingManWPF.Utilities.FileFilterUtil.GetDocumentFilters">
+            <summary>
+            get document filter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ToolingManWPF.Lab">
+            <summary>
+            Lab.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Lab
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Lab.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Lab.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗体加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Lab.ChooseFileBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-显示浏览文件窗口
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Lab.RemoveFileBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-移除文件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Lab.UpReportBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-上传报告
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Lab.LoadConditions">
+            <summary>
+            加载选择条件
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.Lab.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.Lab.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ToolingManWPF.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ToolingManWPF.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.App">
+            <summary>
+            App.xaml 的交互逻辑
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldReturn">
+            <summary>
+            MoldReturn
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.#ctor(System.String)">
+            <summary>
+            实例化窗体
+            </summary>
+            <param name="moldNr">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗体加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.LoadMoldReturnStateCondition">
+            <summary>
+            加载模具归还状态条件
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.ReturnMoldBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具归还
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.MoldInStoreBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具入库
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.MoldNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦申领员工输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.ApplicantNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦备注输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.RemarkTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦归还按钮
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldReturn.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldInitStore">
+            <summary>
+            MoldInitStore.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MoldInitStore
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldInitStore.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldInitStore.OKBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具添库
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInitStore.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.InOutInfo">
+            <summary>
+            InOutInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            InOutInfo
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.InOutInfo.#ctor(System.String)">
+            <summary>
+            实例化页面
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.InOutInfo.QueryBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-查询出入信息
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.InOutInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.DynamicInfo">
+            <summary>
+            DynamicInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DynamicInfo
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.DynamicInfo.#ctor(System.String)">
+            <summary>
+            实例化页面
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.DynamicInfo.Page_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            页面加载事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.DynamicInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MoldInStore">
+            <summary>
+            MoldInStore.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MoldInStore
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.#ctor">
+            <summary>
+            实例化窗体
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.#ctor(System.String)">
+            <summary>
+            实例化窗体
+            </summary>
+            <param name="moldNR">模具号</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.OKBtn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮点击事件-模具入库
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.MoldNRTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦操作员输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.OperatorTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦备注输入框
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.RemarkTB_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            键盘释放事件-聚焦入库按钮
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.MoldNRTB_LostFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            光标失焦事件-显示模具位置
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.ShowMoldPosition">
+            <summary>
+            显示模具位置
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MoldInStore.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.MainWindow">
+            <summary>
+            MainWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.DataMan">
+            <summary>
+            DataMan.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DataMan
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.DataMan.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.DataMan.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ToolingManWPF.DataExporter">
+            <summary>
+            DataExporter.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DataExporter
+            </summary>
+        </member>
+        <member name="M:ToolingManWPF.DataExporter.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            窗体关闭事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:ToolingManWPF.DataExporter.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

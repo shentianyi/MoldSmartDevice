@@ -191,7 +191,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
             new ForeignKeyChecker(){CheckQuery="select * from Position where PositionNR=@posi",CheckValueIndex=1,CheckMessage="新库位不存在，请先导入库位"}};
 
             string uniqString = "select * from Mold where MoldNr=@nr";
-            string updateString = @"update UniqStorage set PositionId =(SELECT  PositionID  FROM  Position where PositionNR='NeoniMoldTransfer01')
+            string updateString = @"update UniqStorage set PositionId =(SELECT  PositionID  FROM  Position where PositionNR='LeoniMoldTransfer01')
 where PositionId in (SELECT PositionID  FROM  Position where PositionNR=@posi);
 update UniqStorage set PositionId =(SELECT  top 1  PositionID  FROM  Position where PositionNR=@posi)
 where UniqNR=@nr;

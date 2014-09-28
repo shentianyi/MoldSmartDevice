@@ -35,8 +35,8 @@ namespace ToolingDataSys.Code
         public List<Message> Delete(DataTable dt)
         {
             string uniqString = "select * from Position where PositionNR=@pnr";
-            string deleteString = @"update UniqStorage set PositionId=(SELECT  PositionID  FROM  Position where PositionNR='NeoniMoldTransfer01')
-                   where  PositionId=(SELECT  PositionID  FROM  Position where PositionNR=@pnr);
+            string deleteString = @"update UniqStorage set PositionId=(SELECT  PositionID  FROM  Position where PositionNR='LeoniMoldTransfer01')
+                   where  PositionId=(SELECT top 1 PositionID  FROM  Position where PositionNR=@pnr);
                    delete from Position where PositionNR=@pnr";
             return SQLHelper.Delete(uniqString, deleteString, dt, 
                 new SqlParameter[] { 
