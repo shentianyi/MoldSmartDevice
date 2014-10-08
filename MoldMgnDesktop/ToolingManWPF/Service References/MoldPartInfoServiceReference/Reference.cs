@@ -585,6 +585,9 @@ namespace ToolingManWPF.MoldPartInfoServiceReference {
     public partial class MoldWarnInfo : ToolingManWPF.MoldPartInfoServiceReference.MoldBaseInfo {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApplicantIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double DisMinuteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -594,13 +597,23 @@ namespace ToolingManWPF.MoldPartInfoServiceReference {
         private System.DateTime LendTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaxLendHour1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool MinusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime ShouldReTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApplicantId {
+            get {
+                return this.ApplicantIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApplicantIdField, value) != true)) {
+                    this.ApplicantIdField = value;
+                    this.RaisePropertyChanged("ApplicantId");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double DisMinute {
@@ -637,19 +650,6 @@ namespace ToolingManWPF.MoldPartInfoServiceReference {
                 if ((this.LendTimeField.Equals(value) != true)) {
                     this.LendTimeField = value;
                     this.RaisePropertyChanged("LendTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="MaxLendHour")]
-        public double MaxLendHour1 {
-            get {
-                return this.MaxLendHour1Field;
-            }
-            set {
-                if ((this.MaxLendHour1Field.Equals(value) != true)) {
-                    this.MaxLendHour1Field = value;
-                    this.RaisePropertyChanged("MaxLendHour1");
                 }
             }
         }

@@ -173,6 +173,8 @@
       <Column Name="Weight" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="Material" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Destination" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ApplicantId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OperatorId" Type="System.String" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

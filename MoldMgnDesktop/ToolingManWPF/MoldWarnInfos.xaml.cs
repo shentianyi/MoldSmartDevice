@@ -13,6 +13,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using ToolingManWPF.ConditionServiceReference;
 using ToolingManWPF.MoldPartInfoServiceReference;
+using Microsoft.Win32;
+using ToolingManWPF.Helper;
 
 namespace ToolingManWPF
 {
@@ -21,6 +23,8 @@ namespace ToolingManWPF
     /// </summary>
     public partial class MoldWarnInfos : Window
     {
+        SaveFileDialog saveFileDialog = null;
+
         /// <summary>
         /// 实例化窗体
         /// </summary>
@@ -53,6 +57,10 @@ namespace ToolingManWPF
         {
             this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new LoadConditionDelegate(LoadConditions));
             // LoadConditions();
+            saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "导出Excel (*.xls)|*.xls";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.Title = "导出文件保存路径";
         }
         /// <summary>
         /// 加载模具警报条件
@@ -83,6 +91,25 @@ namespace ToolingManWPF
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+        private void ExportBtn_Click(object sender, RoutedEventArgs e)
+        {
+             saveFileDialog.FileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
+             if ((bool)saveFileDialog.ShowDialog())
+             {
+                 MoldPartInfoServiceClient client = new MoldPartInfoServiceClient();
+                 List<MoldWarnInfo> warnInfos = client.GetMoldWarnInfo((MoldWarnType)(int.Parse(WarnCB.SelectedValue.ToString())));
+                 string[] headers = { "模具号","借出员工", "成本中心", "当前位置", "维护周期","借出时间","应还时间","相距时间"};
+                 string[] pathes = { "MoldNR", "ApplicantId", "ProjectName", "CurrentPosition", "MaxLendHour", "LendTime", "ShouldReTime", "DisTimeText" };
+                 if (warnInfos.Count > 0)
+                     if (GenExcelHelper.GenExcel<MoldWarnInfo>(saveFileDialog.FileName, "超期数据", headers, pathes, warnInfos))
+                         MessageBox.Show("数据导出成功，请到保存路径查看");
+                     else
+                         MessageBox.Show("数据导出失败(可能指定文件已经打开)，请重试");
+                 else
+                     MessageBox.Show("不存在记录数据");
+             }
         }
 
       

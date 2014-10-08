@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToolingWCF</name>
+    </assembly>
+    <members>
+        <member name="M:ToolingWCF.IStorageManageService.ApplyMold(ClassLibrary.ENUM.MoldUseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            apply mold
+            </summary>
+            <param name="moldUseType"></param>
+            <param name="moldNR"></param>
+            <param name="applicantNR"></param>
+            <param name="operatorNR"></param>
+            <param name="workstationNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.ReturnMold(System.String,System.String,System.String,System.String,ClassLibrary.ENUM.MoldReturnStateType)">
+            <summary>
+            return mold
+            </summary>
+            <param name="moldNR"></param>
+            <param name="applicantNR"></param>
+            <param name="operatorNR"></param>
+            <param name="workstationNR"></param>
+            <param name="moldState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.ReturnMoldInPosition(System.String,System.String,System.String)">
+            <summary>
+            move the mold from MoldPool in position
+            </summary>
+            <param name="moldNR"></param>
+            <param name="operatorNR"></param>
+            <param name="remark"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.MoldInStore(System.String,System.String,System.String,System.String)">
+            <summary>
+            store the mold in the mold position
+            </summary>
+            <param name="storageRecord">the storage record</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.MoldMoveStore(System.String,System.String,System.String,System.String)">
+            <summary>
+            move the mold
+            </summary>
+            <param name="moldNR"></param>
+            <param name="sourcePosiNr"></param>
+            <param name="desiPosiNr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.MoldTest(System.String,System.String,ToolingWCF.DataModel.FileUP[],System.Int32,System.Boolean)">
+            <summary>
+            generate test report for mold
+            </summary>
+            <param name="moldNR"></param>
+            <param name="operatorNR"></param>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.MoldMaintain(System.String,System.String,ToolingWCF.DataModel.FileUP[],System.Boolean)">
+            <summary>
+            generate maintain report for mold
+            </summary>
+            <param name="moldNR"></param>
+            <param name="operatorNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.FileUpLoad(ToolingWCF.DataModel.FileUP[],System.String)">
+            <summary>
+            upload files
+            </summary>
+            <param name="files"></param>
+            <param name="masterNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IStorageManageService.MoldMoveWorkStation(System.String,System.String,System.String)">
+            <summary>
+            move mold work station
+            </summary>
+            <param name="moldNR"></param>
+            <param name="operatorNR"></param>
+            <param name="targetWStationNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.ApplyMold(ClassLibrary.ENUM.MoldUseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            申领模具
+            </summary>
+            <param name="moldUseType">模具使用类型</param>
+            <param name="moldNR">模具号</param>
+            <param name="applicantNR">申请员工工号</param>
+            <param name="operatorNR">操作员工工号</param>
+            <param name="workstationNR">操作台号</param>
+            <returns>申请信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.ReturnMold(System.String,System.String,System.String,System.String,ClassLibrary.ENUM.MoldReturnStateType)">
+            <summary>
+            归还模具
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="applicantNR">申请员工工号</param>
+            <param name="operatorNR">操作员工工号</param>
+            <param name="remark">备注</param>
+            <param name="moldState">模具状态</param>
+            <returns>归还信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.ReturnMoldInPosition(System.String,System.String,System.String)">
+            <summary>
+            将模具从缓冲区移到库位
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="remark">备注</param>
+            <returns>操作信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.MoldMoveStore(System.String,System.String,System.String,System.String)">
+            <summary>
+            模具移库
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="sourcePosiNr">源位置号</param>
+            <param name="desiPosiNr">目标位置号</param>
+            <returns>移库信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.MoldInStore(System.String,System.String,System.String,System.String)">
+            <summary>
+            模具入库
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="warehouseNR">仓库号</param>
+            <param name="positionNR">库位号</param>
+            <returns>入库信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.MoldTest(System.String,System.String,ToolingWCF.DataModel.FileUP[],System.Int32,System.Boolean)">
+            <summary>
+            模具测试
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="files">文件列表</param>
+            <returns>测试信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.MoldMaintain(System.String,System.String,ToolingWCF.DataModel.FileUP[],System.Boolean)">
+            <summary>
+            模具维护
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="files">文件列表</param>
+            <returns>维护信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.FileUpLoad(ToolingWCF.DataModel.FileUP[],System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件列表</param>
+            <param name="masterNR">附主号</param>
+            <returns>上传信息</returns>
+        </member>
+        <member name="M:ToolingWCF.StorageManageService.MoldMoveWorkStation(System.String,System.String,System.String)">
+            <summary>
+            模具移动工作台
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="targetWStationNR">目标工作台号</param>
+            <returns>移动信息</returns> 
+        </member>
+        <member name="M:ToolingWCF.Utilities.PrefixUtil.GetMoldPositionPrefix(ClassLibrary.ENUM.StorageRecordType)">
+            <summary>
+            get the prefix of the mold position
+            </summary>
+            <param name="sotrageRecordType">type of apply the mold</param>
+            <returns>the prefix in chinese</returns>
+        </member>
+        <member name="M:ToolingWCF.IConditionService.GetMoldTypes">
+            <summary>
+            get the list of mold type as the select condition
+            </summary>
+            <returns>the list of mold type</returns>
+        </member>
+        <member name="M:ToolingWCF.IConditionService.GetProjects">
+            <summary>
+            get the list of project as the select condition
+            </summary>
+            <returns>the list project</returns>
+        </member>
+        <member name="M:ToolingWCF.IConditionService.GetEnumItems(System.String)">
+            <summary>
+            get the list of enum item 
+            </summary>
+            <param name="enumType">type of enum</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IConditionService.GetWarehousesByType(ClassLibrary.ENUM.WarehouseType)">
+            <summary>
+            get the warehouse by warehouse type
+            </summary>
+            <param name="warehouseType">the type of the warehouse</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IConditionService.MoldExist(System.String)">
+            <summary>
+            judege if mold exsit by mold nr
+            </summary>
+            <param name="moldNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.GetMoldCates">
+            <summary>
+            获取模具类别列表
+            </summary>
+            <returns>模具类别列表</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.GetMoldTypes">
+            <summary>
+            获取模具型号列表
+            </summary>
+            <returns>模具型号列表</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.GetProjects">
+            <summary>
+            获取成本中心列表
+            </summary>
+            <returns>成本中心列表</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.GetEnumItems(System.String)">
+            <summary>
+             根据枚举类型获得枚举列表
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <returns>枚举列表</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.GetWarehousesByType(ClassLibrary.ENUM.WarehouseType)">
+            <summary>
+            根据仓库类型获取仓库列表
+            </summary>
+            <param name="warehouseType">仓库类型</param>
+            <returns>仓库列表</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.MoldExist(System.String)">
+            <summary>
+            根据模具号判断模具是否存在
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.EmpExist(System.String)">
+            <summary>
+            根据员工号判断员工是否存在
+            </summary>
+            <param name="empId">员工号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.WorkstationExist(System.String)">
+            <summary>
+            根据工作台号判断工作台是否存在
+            </summary>
+            <param name="stationId">工作台号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ToolingWCF.ConditionService.PositionExist(System.String)">
+            <summary>
+            根据库存号判断库存是否存在
+            </summary>
+            <param name="posiNr">库存号</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldByMutiConditions(ClassLibrary.Data.MoldSearchCondition)">
+            <summary>
+            get the molds in form of list by the selected conditions
+            </summary>
+            <param name="conditions">the instance of condition</param>
+            <returns>the list of mold</returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldBaseInfoByNR(System.String)">
+            <summary>
+            get the mold  by mold id
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <returns>the instance of Mold</returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldDynamicInfoByMoldNR(System.String)">
+            <summary>
+            get the mold dynamic info
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldApplyRecords(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            get the mold apply records by mold id 
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <param name="endDate"></param>
+            <param name="startDate"></param>
+            <returns>the list of the mold apply records</returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldApplyRecordsInPages(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            get the mold apply records by mold id, page, pageSize
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <param name="pageIndex">the index of page</param>
+            <param name="pageSize">the size of page</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldReleaseInfoByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            get the list of report by its mold id
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <returns>the list of report</returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldReleaseInfoByMoldNRInPage(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            get the reports by mold nr, page, pageSize
+            </summary>
+            <param name="moldNR">the NR of mold</param>
+            <param name="pageIndex">the index of page</param>
+            <param name="pageSize">the size of page</param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetFileByName(System.String)">
+            <summary>
+            get file from server by file name
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldWarnInfo(ClassLibrary.ENUM.MoldWarnType)">
+            <summary>
+            get mold by it warn type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldPositionByNr(System.String)">
+            <summary>
+            get mold position by its mold nr
+            </summary>
+            <param name="moldNR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldNrByPosiNr(System.String)">
+            <summary>
+            get mold nr by position nr
+            </summary>
+            <param name="posiNr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.IMoldPartInfoService.GetMoldCurrentPosition(System.String)">
+            <summary>
+            get mold current position
+            </summary>
+            <param name="moldNr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldByMutiConditions(ClassLibrary.Data.MoldSearchCondition)">
+            <summary>
+            根据搜索条件获得模具基本信息
+            </summary>
+            <param name="conditions">搜索条件</param>
+            <returns>模具基本信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldBaseInfoByNR(System.String)">
+            <summary>
+            根据模具号获得模具基本信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具基本信息</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldDynamicInfoByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具动态信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具基本信息</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldApplyRecords(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作员号、起止日期获得模具基本信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具基本信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldApplyRecordsInPages(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作员号、起止日期、页码信息获得模具基本信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">页码数量</param>
+            <returns>模具基本信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldReleaseInfoByMoldNR(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作员号、起止日期、页码信息获得模具放行信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具放行信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldReleaseInfoByMoldNRInPage(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据模具号、操作员号、起止日期、页码信息获得模具放行信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">页码数量</param>
+            <returns>模具放行信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetAttachmentById(System.Guid)">
+            <summary>
+            根据报告号获取附件
+            </summary>
+            <param name="reportId">报告号</param>
+            <returns>附件列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetFileByName(System.String)">
+            <summary>
+            根据文件名获得文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns>文件</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldWarnInfo(ClassLibrary.ENUM.MoldWarnType)">
+            <summary>
+            根据模具警报类型获得模具警报信息
+            </summary>
+            <param name="type">模具警报类型</param>
+            <returns>模具警报信息列表</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldPositionByNr(System.String)">
+            <summary>
+            根据模具号获得库位
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>库位</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldNrByPosiNr(System.String)">
+            <summary>
+            根据模具号获得库位号
+            </summary>
+            <param name="posiNr">库位号</param>
+            <returns>模具号</returns>
+        </member>
+        <member name="M:ToolingWCF.MoldPartInfoService.GetMoldCurrentPosition(System.String)">
+            <summary>
+            根据模具号获得库位号
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>库位号</returns>
+        </member>
+        <member name="T:ToolingWCF.SmartDeviceApi">
+            <summary>
+            移动终端API
+            </summary>
+        </member>
+        <member name="M:ToolingWCF.SmartDeviceApi.GetMoldDynamicInfoByMoldNR(System.String)">
+            <summary>
+            根据模具号获得模具动态信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具动态信息</returns>
+        </member>
+        <member name="M:ToolingWCF.SmartDeviceApi.GetMoldBaseInfoByNR(System.String)">
+            <summary>
+            根据模具号获得模具基本信息
+            </summary>
+            <param name="moldNR">模具号</param>
+            <returns>模具基本信息</returns>
+        </member>
+        <member name="M:ToolingWCF.SmartDeviceApi.MoldMoveWorkStation(System.String,System.String,System.String)">
+            <summary>
+            模具移动工作台
+            </summary>
+            <param name="moldNR">模具号</param>
+            <param name="operatorNR">操作员工号</param>
+            <param name="targetWStationNR">目标工作台号</param>
+            <returns>移动信息</returns> 
+        </member>
+        <member name="T:ToolingWCF.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ToolingWCF.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ToolingWCF.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+    </members>
+</doc>

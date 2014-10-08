@@ -9,10 +9,12 @@ namespace ToolingWCF.DataModel
     [DataContract]
     public class MoldWarnInfo : MoldBaseInfo
     {
-        [DataMember]
-        public double MaxLendHour { get; set; }
+        //[DataMember]
+        //public double MaxLendHour { get; set; }
         [DataMember]
         public DateTime LendTime { get; set; }
+        [DataMember]
+        public string ApplicantId { get; set; }
         [DataMember]
         public DateTime ShouldReTime { get { return this.LendTime.AddHours(this.MaxLendHour); } set { } }
         [DataMember]

@@ -295,9 +295,10 @@ namespace ToolingWCF
                     MoldWarnInfo moldWarnInfo = new MoldWarnInfo()
                     {
                         MoldNR = m.MoldNR,
-                        Type = m.TypeName,
+                        Type = m.TypeName, 
                         ProjectName = m.ProjectName,
-                        MaxLendHour = (double)m.MaxLendHour,
+                        ApplicantId=m.ApplicantId,
+                        MaxLendHour = m.MaxLendHour.HasValue ? m.MaxLendHour.Value : 0,
                         LendTime = (DateTime)m.LastRecordDate,
                         CurrentPosition = m.StorageRecordNR.HasValue ? moldRepostitory.GetMoldCurrPosiByRecordNR((Guid)m.StorageRecordNR) : string.Empty
                     };
