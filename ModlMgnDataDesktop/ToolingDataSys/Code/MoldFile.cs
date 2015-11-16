@@ -37,8 +37,8 @@ namespace ToolingDataSys.Code
                     };
                     string uniqQuery = "select * from Mold where MoldNR=@nr";
 
-                    string insertQuery = @"insert into Mold(MoldNR,MoldTypeID,ProjectID,Name,State,MaxLendHour,ReleaseCycle,MaintainCycle,Producer,Weight,Material)
-values(@nr,@type,@pro,@name,1,@max,@release,@main,@producer,@weight,@material);
+                    string insertQuery = @"insert into Mold(MoldNR,MoldTypeID,ProjectID,Name,State,MaxCuttimes,CurrentCuttimes,MaxLendHour,ReleaseCycle,MaintainCycle,Producer,Weight,Material)
+values(@nr,@type,@pro,@name,1,@maxCut,0,@max,@release,@main,@producer,@weight,@material);
 insert into UniqStorage(UniqStorageId,UniqNR,PositionId,Quantity)
 values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi),1);
   insert into StorageRecord(StorageRecordNR,PositionId,Destination,Date,Quantity,RecordType,TargetNR,OperatorId)
@@ -51,6 +51,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                     SqlParameter type = new SqlParameter("@type", SqlDbType.VarChar);
                     SqlParameter pro = new SqlParameter("@pro", SqlDbType.VarChar);
                     SqlParameter name = new SqlParameter("@name", SqlDbType.VarChar);
+                    SqlParameter maxCut = new SqlParameter("@maxCut", SqlDbType.BigInt);
                     SqlParameter max = new SqlParameter("@max", SqlDbType.Int);
                     SqlParameter release = new SqlParameter("@release", SqlDbType.Int);
                     SqlParameter main = new SqlParameter("@main", SqlDbType.Int);
@@ -64,6 +65,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                     com.Parameters.Add(type);
                     com.Parameters.Add(pro);
                     com.Parameters.Add(name);
+                    com.Parameters.Add(maxCut);
                     com.Parameters.Add(max);
                     com.Parameters.Add(release);
                     com.Parameters.Add(main);
@@ -84,12 +86,13 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                                 type.Value = row[2];
                                 pro.Value = row[3];
                                 name.Value = row[4];
-                                max.Value = int.Parse(row[5].ToString().Trim());
-                                release.Value = int.Parse(row[6].ToString().Trim());
-                                main.Value = int.Parse(row[7].ToString().Trim());
-                                producer.Value = row[8];
-                                weight.Value = int.Parse(row[9].ToString().Trim());
-                                material.Value = row[10];
+                                maxCut.Value = int.Parse(row[5].ToString().Trim());
+                                max.Value = int.Parse(row[6].ToString().Trim());
+                                release.Value = int.Parse(row[7].ToString().Trim());
+                                main.Value = int.Parse(row[8].ToString().Trim());
+                                producer.Value = row[9];
+                                weight.Value = int.Parse(row[10].ToString().Trim());
+                                material.Value = row[11];
 
                                 guid.Value = Guid.NewGuid();
                                 date.Value = DateTime.Now.ToString();
@@ -150,7 +153,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
         public List<Message> Update(DataTable dt)
         {
             string uniqString = "select * from Mold where MoldNr=@nr";
-            string updateString = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
+            string updateString = @"update Mold set MoldTypeID=@type,ProjectID=@pro,Name=@name,MaxCuttimes=@maxCut,MaxLendHour=@max,ReleaseCycle=@release,MaintainCycle=@main,
             Producer=@producer,Weight=@weight,Material=@material where MoldNr=@nr";
             return SQLHelper.Update(uniqString, updateString, dt, GetParams(), 0);
         }
@@ -162,6 +165,7 @@ values(NEWID(),@nr,(select top 1 PositionID from Position where PositionNR=@posi
                new SqlParameter("@type", SqlDbType.VarChar),
                new SqlParameter("@pro", SqlDbType.VarChar),
                new SqlParameter("@name", SqlDbType.VarChar),
+               new SqlParameter("@maxCut", SqlDbType.BigInt),
                new SqlParameter("@max", SqlDbType.Int),
                new SqlParameter("@release", SqlDbType.Int),
                new SqlParameter("@main", SqlDbType.Int),

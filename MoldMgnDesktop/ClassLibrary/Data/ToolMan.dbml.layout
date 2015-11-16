@@ -115,14 +115,14 @@
         <classShapeMoniker Id="0d746261-6987-478e-8a45-f45da28cce88" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.48878214518229); (8.5 : 7.73878214518229); (8.5 : 7.125); (8.56607443490112 : 7.19107443490112 : JumpStart); (8.68392556509888 : 7.30892556509888 : JumpEnd); (9 : 7.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 7.48878214518229); (8.5 : 7.73878214518229); (8.5 : 7.125); (9 : 7.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ToolManDataContext/Mold/Mold_Report" />
       <nodes>
         <classShapeMoniker Id="e6f950e5-1f2f-4cc8-ace8-9715d7046fe7" />
         <classShapeMoniker Id="0d746261-6987-478e-8a45-f45da28cce88" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.71875); (8.54166666666667 : 4.71875 : JumpStart); (8.70833333333333 : 4.71875 : JumpEnd); (12 : 4.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 4.71875); (12 : 4.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ToolManDataContext/Mold/Mold_UniqStorage" />
       <nodes>
         <classShapeMoniker Id="e6f950e5-1f2f-4cc8-ace8-9715d7046fe7" />

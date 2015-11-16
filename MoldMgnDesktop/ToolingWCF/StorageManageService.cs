@@ -36,6 +36,7 @@ namespace ToolingWCF
                     IWorkstationRepository workstationRep = new WorkstationRepository(unitwork);
                     IMoldRepository moldRep = new MoldRepository(unitwork);
                     Mold mold = moldRep.GetById(moldNR);
+                    
                     // check mold is available for apply
                     if (mold.State == MoldStateType.NotReturned)
                         return new Message() { MsgType = MsgType.Warn, Content = "模具处于不可借状态！" };
@@ -44,6 +45,13 @@ namespace ToolingWCF
                     if (workstationRep.OverAppliedMold(workstationNR) == false && Settings.Default.AllowOverApply == false)
                         return new Message() { MsgType = MsgType.Warn, Content = "申领已到达上限！" };
 
+                    if (mold.CurrentCuttimes!= null && mold.MaxCuttimes != null)
+                    {
+                        if (mold.CurrentCuttimes.Value > mold.MaxCuttimes.Value)
+                        {
+                            return new Message() { MsgType = MsgType.Warn, Content = "模具压接次数超过上限！" };
+                        }
+                    }
 
               
                     IPositionRepository positionRep = new PositionRepository(unitwork);

@@ -47,9 +47,11 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -75,9 +77,11 @@
     <Compile Include="Helper\MoldRecordTypeHelper.cs" />
     <Compile Include="IConditionService.cs" />
     <Compile Include="IMoldPartInfoService.cs" />
+    <Compile Include="IRestService.cs" />
     <Compile Include="ISmartDeviceApi.cs" />
     <Compile Include="IStorageManageService.cs" />
     <Compile Include="MSSQLHelper.cs" />
+    <Compile Include="RestService.cs" />
     <Compile Include="SmartDeviceApi.cs" />
     <Compile Include="StorageManageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
